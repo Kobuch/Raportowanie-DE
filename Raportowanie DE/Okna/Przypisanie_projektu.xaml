@@ -1,0 +1,97 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Raportowanie_DE.Okna"
+        xmlns:Raportowanie_DE="clr-namespace:Raportowanie_DE" x:Class="Raportowanie_DE.Okna.Przypisanie_projektu"
+        mc:Ignorable="d"
+        Title="Przypisanie_projektu" Height="500" Width="1100" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Raportowanie_DE:JPP_DEDataSet x:Key="jPP_DEDataSet"/>
+        <CollectionViewSource x:Key="lista_projektowViewSource" Source="{Binding Lista_projektow, Source={StaticResource jPP_DEDataSet}}"/>
+        <CollectionViewSource x:Key="lista_czynnosciViewSource" Source="{Binding Lista_czynnosci, Source={StaticResource jPP_DEDataSet}}"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource lista_projektowViewSource}">
+
+        <DataGrid x:Name="lista_projektowDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="54,64,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" HorizontalAlignment="Left" Height="338" VerticalAlignment="Top" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="iD_lista_projColumn" Width="SizeToHeader" IsReadOnly="True" Header="ID lista proj" Binding="{Binding ID_lista_proj}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="numerColumn" Width="150" Header="numer" Binding="{Binding numer}"/>
+                <DataGridTextColumn x:Name="skrocona_nazwaColumn" Width="SizeToHeader" Header="Skrocona nazwa" Binding="{Binding Skrocona_nazwa}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="pelna_nazwaColumn" Width="SizeToHeader" Header="Pelna nazwa" Binding="{Binding Pelna_nazwa}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="klientColumn" Width="150" Header="Klient" Binding="{Binding Klient}"/>
+                <DataGridTextColumn x:Name="operatorColumn" Width="150" Header="Operator" Binding="{Binding Operator}"/>
+                <DataGridTextColumn x:Name="koordynatorColumn" Width="SizeToHeader" Header="Koordynator" Binding="{Binding Koordynator}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="statusColumn" Width="SizeToHeader" Header="Status" Binding="{Binding Status}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="aktywnyColumn" Width="SizeToHeader" Header="Aktywny" Binding="{Binding Aktywny}" Visibility="Hidden"/>
+                <DataGridCheckBoxColumn x:Name="mozna_usuwacColumn" Width="SizeToHeader" Header="Mozna usuwac" Binding="{Binding Mozna_usuwac}" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid x:Name="lista_czynnosciDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Source={StaticResource lista_czynnosciViewSource}}" Margin="544,64,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="id_lista_czynnColumn" Binding="{Binding Id_lista_czynn}" Header="Id lista czynn" IsReadOnly="True" Width="SizeToHeader" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding czynnosc}" Header="czynnosc" Width="150"/>
+                <DataGridTextColumn x:Name="rynekColumn" Binding="{Binding Rynek}" Header="Rynek" Width="SizeToHeader" Visibility="Hidden"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button_dodaj"  Content="Dodaj wybrany&#xA;do raportu"  HorizontalAlignment="Left" Margin="836,239,0,0" VerticalAlignment="Top" Width="110" Height="37" Click="button_dodaj_Click" Foreground="#FF0425B8"/>
+        <Label x:Name="label_Copy" Content="Zadania" HorizontalAlignment="Left" Margin="544,30,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Label x:Name="label_Copy1" Content="Lista projektów aktywnych" HorizontalAlignment="Left" Margin="54,30,0,0" VerticalAlignment="Top" FontSize="14" IsEnabled="False" Foreground="Black"/>
+        <Button x:Name="button_anuluj"  Content="Anuluj i wyjdź"  HorizontalAlignment="Left" Margin="836,297,0,0" VerticalAlignment="Top" Width="110" Height="37" Click="button_anuluj_Click"/>
+
+        <Grid x:Name="grid1" DataContext="{StaticResource lista_czynnosciViewSource}" HorizontalAlignment="Left" Margin="768,190,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="czynnosc:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Foreground="#FFB2B0B0"/>
+            <TextBox x:Name="czynnoscTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding czynnosc, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+        </Grid>
+
+
+
+        <Grid x:Name="grid2" HorizontalAlignment="Left" Margin="756,60,0,0" VerticalAlignment="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+
+
+            </Grid.RowDefinitions>
+
+
+
+            <Label Content="numer:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Foreground="#FFB2B0B0"/>
+            <TextBox x:Name="numerTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding numer, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsReadOnly="True" Foreground="#FFB2B0B0"/>
+
+            <Label Content="Klient:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" Foreground="#FFB2B0B0"/>
+            <TextBox x:Name="klientTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Klient, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsReadOnly="True" Foreground="#FFB2B0B0"/>
+
+            <Label Content="Operator:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="2" VerticalAlignment="Center" Foreground="#FFB2B0B0"/>
+            <TextBox x:Name="operatorTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="2" Text="{Binding Operator, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120" IsReadOnly="True" Foreground="#FFB2B0B0"/>
+
+
+            <Label Content="ID lista proj:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="3" VerticalAlignment="Center" Foreground="#FFB2B0B0"/>
+            <TextBox x:Name="iD_lista_projTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="3" Text="{Binding ID_lista_proj, Mode=OneWay}" VerticalAlignment="Center" Width="120" IsReadOnly="True" Foreground="#FFB2B0B0"/>
+
+
+        </Grid>
+        <Label x:Name="label" Content="Wybrany" HorizontalAlignment="Left" Margin="813,26,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <TextBox x:Name="textBoxszukaj" HorizontalAlignment="Left" Height="23" Margin="301,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" KeyUp="textBoxszukaj_KeyUp"/>
+        <Button x:Name="buttonszukaj" Content="Czyść filtr" HorizontalAlignment="Left" Margin="431,26,0,0" VerticalAlignment="Top" Width="75" Click="buttonszukaj_Click"/>
+        <Border x:Name="bord1" BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Left" Height="94" Margin="49,55,0,0" VerticalAlignment="Top" Width="469"/>
+        <Border x:Name="bord2" BorderBrush="Red" BorderThickness="2" HorizontalAlignment="Left" Height="94" Margin="532,55,0,0" VerticalAlignment="Top" Width="176"/>
+
+
+    </Grid>
+</Window>

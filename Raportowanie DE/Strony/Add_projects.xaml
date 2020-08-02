@@ -1,0 +1,99 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Raportowanie_DE.Strony"
+             xmlns:Raportowanie_DE="clr-namespace:Raportowanie_DE" x:Class="Raportowanie_DE.Strony.Add_projects"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Raportowanie_DE:JPP_DEDataSet x:Key="jPP_DEDataSet"/>
+        <CollectionViewSource x:Key="slownik_klienciViewSource" Source="{Binding Slownik_klienci, Source={StaticResource jPP_DEDataSet}}"/>
+        <CollectionViewSource x:Key="slownik_operatorViewSource" Source="{Binding Slownik_operator, Source={StaticResource jPP_DEDataSet}}"/>
+    </UserControl.Resources>
+
+    <Grid >
+        <Grid Margin="0,0,0,600"  >
+
+
+
+
+
+
+
+
+
+
+        </Grid>
+
+        <StackPanel Margin="0,0,0,36">
+            <Label Content="Dodawanie pojedyncze"/>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Numer:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
+                <TextBox x:Name="textboxnumer" Width="120" Margin="20,3,3,3" />
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Klient:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="klientComboBox" Grid.Column="1" DisplayMemberPath="Klient" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding Klient}" Margin="25,3,3,3" Grid.Row="0" VerticalAlignment="Center" Width="120">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Operator:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
+                <ComboBox x:Name="operatorComboBox" Grid.Column="1" DisplayMemberPath="Operator" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding Operator}" Margin="7,3,3,3" Grid.Row="0" VerticalAlignment="Center" Width="120">
+                    <ComboBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </ComboBox.ItemsPanel>
+                </ComboBox>
+
+
+            </StackPanel>
+            <Button x:Name="buttondodajpojedynczy" Content="Dodaj 1 projekt"  IsEnabled="False" HorizontalAlignment="Left" Margin="100,3,3,3" VerticalAlignment="Top" Width="100" Click="buttondodajpojedynczy_Click" >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect >
+            </Button>
+        </StackPanel>
+
+
+
+
+
+        <Grid x:Name="Gridglowny" DataContext="{Binding lista1, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" >
+            <Label Content="Pole do wklejenia listy z Excela" Margin="20,155,803,623"/>
+            <TextBox x:Name="textBoxDane" HorizontalAlignment="Left" Height="378" Margin="10,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="301"
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible"        />
+
+            <DataGrid x:Name="lista_projektowDataGrid" VerticalScrollBarVisibility="Visible"   RowDetailsVisibilityMode="VisibleWhenSelected" Margin="460,182,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionUnit="Cell" Width="523" CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="numerColumn" Width="120" Header="numer" Binding="{Binding numer}" />
+                    <DataGridTextColumn x:Name="klientColumn" Width="120" Header="Klient" Binding="{Binding Klient}"/>
+                    <DataGridTextColumn x:Name="operatorColumn" Width="120" Header="Operator" Binding="{Binding Operator}"/>
+                    <DataGridCheckBoxColumn x:Name="niewgranoColumn" Width="60" Header="blad" Binding="{Binding niewgrano}"/>
+                    <DataGridCheckBoxColumn x:Name="powielonyColumn" Width="60" Header="powiela" Binding="{Binding powielony}"/>
+
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="butzmiana" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="338,316,0,0" VerticalAlignment="Top" Width="51" Height="34" Click="butzmiana_Click"/>
+            <Grid HorizontalAlignment="Left" Height="40" Margin="491,124,0,0" VerticalAlignment="Top" Width="492">
+                <DockPanel Margin="0,0,0,0" >
+
+                    <Label x:Name="labelIlerekordow" Content="0:rekordow" VerticalAlignment="Center" RenderTransformOrigin="0.993,5.519" />
+                    <Button x:Name="butZapiszdobazy" Content="Zapisz do bazy" HorizontalAlignment="Left" VerticalAlignment="Center" Width="89" Click="butZapiszdobazy_Click" Margin="10,0,0,0"/>
+
+                </DockPanel>
+
+
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>
