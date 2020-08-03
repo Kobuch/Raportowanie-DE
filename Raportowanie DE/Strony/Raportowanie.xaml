@@ -34,7 +34,7 @@
                 <GradientStop Color="White" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Calendar x:Name="calendar1" HorizontalAlignment="Left" Margin="37,30,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" SelectionMode="SingleRange" IsTodayHighlighted="False"  MouseDoubleClick="calendar1_MouseDoubleClick"/>
+        <Calendar x:Name="calendar1"   HorizontalAlignment="Left" Margin="37,30,0,0" VerticalAlignment="Top" FirstDayOfWeek="Monday" SelectionMode="SingleRange" IsTodayHighlighted="False"  MouseDoubleClick="calendar1_MouseDoubleClick"/>
         <Label x:Name="label" Content="Rok" HorizontalAlignment="Left" Margin="340,55,0,0" VerticalAlignment="Top" Foreground="#FFF7F5F5"/>
         <Label x:Name="labelRok" Content="Label" HorizontalAlignment="Left" Margin="332,81,0,0" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFF7F3F3" Foreground="#FFFBF9F9"/>
         <Label x:Name="label2" Content="Week" HorizontalAlignment="Left" Margin="332,115,0,0" VerticalAlignment="Top" Foreground="#FFF7F3F3"/>
@@ -64,7 +64,7 @@
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
-        <Button x:Name="buttonZapisz" Content="Zapisz zmiany" HorizontalAlignment="Left" Margin="173,429,0,0" VerticalAlignment="Top" Width="96" Foreground="#FFEE0A0A" Click="buttonZapisz_Click">
+        <Button x:Name="buttonZapisz" Content="Zapisz zmiany" HorizontalAlignment="Left" Margin="205,429,0,0" VerticalAlignment="Top" Width="96" Foreground="#FFEE0A0A" Click="buttonZapisz_Click">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
@@ -111,6 +111,7 @@
 
         <Label x:Name="labelsumposr2" Content="Label" HorizontalAlignment="Left" Margin="612,440,0,0" VerticalAlignment="Top" FontSize="14" BorderBrush="#FFF7F3F3" Foreground="#FFFBF9F9"/>
         <Label x:Name="label3_Copy1" Content="Suma:" HorizontalAlignment="Left" Margin="570,443,0,0" VerticalAlignment="Top" Foreground="#FFF5F2F2" RenderTransformOrigin="-0.31,1.038"/>
+        <Label  Content="Lista zadań nieprojektowych" HorizontalAlignment="Left" Margin="10,443,0,0" VerticalAlignment="Top" Foreground="#FFF5F2F2" RenderTransformOrigin="-0.31,1.038"/>
 
         <Button x:Name="butusunczynnoscJPP"  Content="Usuń z listy" HorizontalAlignment="Left" ToolTip="Usuwa wiersz tylko po jego zaznaczeniu" Margin="698,624,0,0" VerticalAlignment="Top" Width="84" Height="24" Click="butusunczynnoscJPP_Click">
             <Button.Effect>
@@ -129,7 +130,7 @@
                 <DataGridTextColumn x:Name="pIAColumn1" Binding="{Binding PIA}" Header="PIA" Width="40"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="butDodajJPPL4Urlop" Content="&lt;&lt; L4, Urlop" HorizontalAlignment="Left" Margin="698,495,0,0" VerticalAlignment="Top" Width="85" Click="butDodajJPPL4Urlop_Click" Height="23">
+        <Button x:Name="butDodajJPPL4Urlop" Content="&lt;&lt; L4, Urlop" HorizontalAlignment="Left" Margin="698,495,0,0" VerticalAlignment="Top" Width="85" Click="butDodajJPPL4Urlop_Click" Height="23" Visibility="Hidden">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>

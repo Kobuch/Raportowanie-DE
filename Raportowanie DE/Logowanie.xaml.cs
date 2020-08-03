@@ -26,6 +26,7 @@ namespace Raportowanie_DE
 
         #region Zmienne
         Logowanieclass logowanie = new Logowanieclass();
+        private bool wyborlogowaniazhaslem = false; 
         #endregion
 
         #region START
@@ -84,16 +85,36 @@ namespace Raportowanie_DE
 
         private void LogowanieZHaslem(object sender, MouseButtonEventArgs e)
         {
-            labelPas_Copy.Visibility = Visibility.Visible;
-            labellog_Copy.Visibility = Visibility.Visible;
-            textBoxLogin.Visibility = Visibility.Visible;
-            textBoxPasword.Visibility = Visibility.Visible;
-            butLogowDomena_Copy.Visibility = Visibility.Visible;
-            butLogowDomena.Visibility = Visibility.Hidden;
-            label2.Visibility = Visibility.Hidden;
-            labelOsoba.Visibility = Visibility.Hidden;
+            if (wyborlogowaniazhaslem)
+            {
+                labelPas_Copy.Visibility = Visibility.Hidden;
+                labellog_Copy.Visibility = Visibility.Hidden;
+                textBoxLogin.Visibility = Visibility.Hidden;
+                textBoxPasword.Visibility = Visibility.Hidden;
+                butLogowDomena_Copy.Visibility = Visibility.Hidden;
+                butLogowDomena.Visibility = Visibility.Visible;
+                label2.Visibility = Visibility.Visible;
+                labelOsoba.Visibility = Visibility.Visible;
 
-            textBoxLogin.Text = labelOsoba.Content.ToString();
+                
+                wyborlogowaniazhaslem = false;
+            }
+            else
+            {
+                labelPas_Copy.Visibility = Visibility.Visible;
+                labellog_Copy.Visibility = Visibility.Visible;
+                textBoxLogin.Visibility = Visibility.Visible;
+                textBoxPasword.Visibility = Visibility.Visible;
+                butLogowDomena_Copy.Visibility = Visibility.Visible;
+                butLogowDomena.Visibility = Visibility.Hidden;
+                label2.Visibility = Visibility.Hidden;
+                labelOsoba.Visibility = Visibility.Hidden;
+
+                textBoxLogin.Text = labelOsoba.Content.ToString();
+
+                wyborlogowaniazhaslem = true;
+            }
+           
         }
 
         private void butLogowDomena_Copy_Click(object sender, RoutedEventArgs e)

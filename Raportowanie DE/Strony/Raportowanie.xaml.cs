@@ -100,7 +100,9 @@ namespace Raportowanie_DE.Strony
         //odświerza wszystkie wymagane kontrolki na ekranie(kalendarz, week, gridy, godziny)
         {
             textBoxWeek.Text = baza.WeekNumber.ToString();
+            calendar1.DisplayDate=baza.dataweekStart;
             calendar1.SelectedDates.AddRange(baza.dataweekStart, baza.dataweekEnd);
+            
             
             zestawy_GodzinTableAdapter.FillBy_oso_week_rok(jPP_DEDataSet.Zestawy_godzin,baza.WeekNumber, baza.login, baza.RokNumber);
             zestawy_GodzinTableAdapter.FillByJPP(jPP_DEDataSetJPP.Zestawy_godzin, baza.WeekNumber, baza.login, baza.RokNumber);
@@ -199,6 +201,7 @@ namespace Raportowanie_DE.Strony
         private void butWeekNext_Click(object sender, RoutedEventArgs e)
         {
             baza.ZmianaWeek(1);
+           
             odswierzaj();
         }
 
@@ -334,7 +337,7 @@ namespace Raportowanie_DE.Strony
 
         private void buttonZapisz_Click(object sender, RoutedEventArgs e)
         {
-            if ((baza.WeekNow - baza.WeekNumber) > 4) { MessageBox.Show("Nie mozna dodawać pozycji dla raportów starszych niż 4 tygodnie!"); return; }
+           // if ((baza.WeekNow - baza.WeekNumber) > 4) { MessageBox.Show("Nie mozna dodawać pozycji dla raportów starszych niż 4 tygodnie!"); return; }
 
             zapisz();
         }
