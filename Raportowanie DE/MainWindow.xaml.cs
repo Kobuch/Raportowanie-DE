@@ -33,6 +33,8 @@ namespace Raportowanie_DE
         Add_projects add_Projects = new Add_projects();
        Kontrola_pracownikow kontrola_Pracownikow = new Kontrola_pracownikow();
         slowniki slowniki = new slowniki();
+        Zestawienie1 zestawienie1 = new Zestawienie1();
+        Raport1 raportgodzin1 = new Raport1();
         
         private string uprawnienie;
 
@@ -58,7 +60,8 @@ namespace Raportowanie_DE
                 button2.IsEnabled = true;
                 button3.IsEnabled = true;
                 button4.IsEnabled = true;
-
+                button5.IsEnabled = true;
+                button6.IsEnabled = true;
             }
 
             if (uprawnienie == "kierownik")
@@ -66,7 +69,8 @@ namespace Raportowanie_DE
                 button2.IsEnabled = true;
                 button3.IsEnabled = true;
                 button4.IsEnabled = true;
-
+                button5.IsEnabled = true;
+                button6.IsEnabled = true;
             }
 
         }
@@ -105,5 +109,16 @@ namespace Raportowanie_DE
             this.Close();
         }
 
+        private void Polecenie5_Click(object sender, RoutedEventArgs e)
+        {
+            ContentControl_JPP.Content = zestawienie1;
+            labelglowny.Content = "Zestawienie godzin";
+        }
+
+        private void Polecenie6_Click(object sender, RoutedEventArgs e)
+        {
+            ContentControl_JPP.Content = raportgodzin1;
+            labelglowny.Content = "Raport 1";
+        }
     }
 }

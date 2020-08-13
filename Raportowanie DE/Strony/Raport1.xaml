@@ -1,0 +1,30 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Raportowanie_DE.Strony"
+             xmlns:Raportowanie_DE="clr-namespace:Raportowanie_DE" x:Class="Raportowanie_DE.Strony.Raport1"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <Raportowanie_DE:JPP_DEDataSet x:Key="jPP_DEDataSet"/>
+        <CollectionViewSource x:Key="view_Zest1_sumagodzin_K_O_W_RViewSource" Source="{Binding View_Zest1_sumagodzin_K_O_W_R, Source={StaticResource jPP_DEDataSet}}"/>
+        <CollectionViewSource x:Key="view_Zest2_sumagodzin_K_O_W_R_P_CViewSource" Source="{Binding View_Zest2_sumagodzin_K_O_W_R_P_C, Source={StaticResource jPP_DEDataSet}}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource view_Zest1_sumagodzin_K_O_W_RViewSource}">
+        <DataGrid x:Name="view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="98,127,502,473" RowDetailsVisibilityMode="VisibleWhenSelected">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="suma_godzinColumn" Binding="{Binding suma_godzin}" Header="suma godzin" IsReadOnly="True" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="operatorColumn" Binding="{Binding Operator}" Header="Operator" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="wEEKColumn" Binding="{Binding WEEK}" Header="WEEK" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="rOKColumn" Binding="{Binding ROK}" Header="ROK" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="projektColumn" Binding="{Binding Projekt}" Header="Projekt" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding Czynnosc}" Header="Czynnosc" Width="SizeToHeader"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <CheckBox x:Name="checkBox" Content="Z podziałem " HorizontalAlignment="Left" Margin="368,106,0,0" VerticalAlignment="Top" 
+                Click="checkBox_Checked" IsChecked="True"/>
+    </Grid>
+</UserControl>

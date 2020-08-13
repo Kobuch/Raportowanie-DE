@@ -37,8 +37,8 @@ namespace Raportowanie_DE.Strony
         public Add_projects()
         {
             InitializeComponent();
-            
-           
+            lista1.Clear();
+
         }
 
         private void Zmieniaj()
@@ -189,6 +189,29 @@ namespace Raportowanie_DE.Strony
 
         private void buttondodajpojedynczy_Click(object sender, RoutedEventArgs e)
         {
+
+
+           // lista1.Clear();
+
+                Wierszprojektu wierszgrid = new Wierszprojektu();
+                if ( textboxnumer.Text.Length>1)
+                {
+                wierszgrid.numer = textboxnumer.Text;
+                wierszgrid.Klient = klientComboBox.Text;
+                wierszgrid.Operator = operatorComboBox.Text;
+                lista1.Add(wierszgrid);       
+                }
+
+            if (lista1.Count != 0)
+            {
+                Gridglowny.DataContext = lista1;
+
+                lista_projektowDataGrid.Items.Refresh();
+                lista_projektowDataGrid.CanUserAddRows = false;
+                labelIlerekordow.Content = lista_projektowDataGrid.Items.Count.ToString() + ": rekordow";
+                
+            }
+
 
         }
     }

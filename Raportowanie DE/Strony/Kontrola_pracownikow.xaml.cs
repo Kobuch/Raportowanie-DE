@@ -253,7 +253,21 @@ namespace Raportowanie_DE.Okna
 
         }
 
-      
+        private void zestawieniedataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            //po osobach zestawienia
+
+               DataGrid dataGrid = sender as DataGrid;
+
+   
+            Pracownik prac1 = dataGrid.CurrentCell.Item as Pracownik;
+
+            przeglad_osoby przeglad_Osoby = new przeglad_osoby(prac1.Login);
+            przeglad_Osoby.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            przeglad_Osoby.Show();
+
+
+        }
     }
 
 

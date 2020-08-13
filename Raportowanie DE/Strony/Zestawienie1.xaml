@@ -1,0 +1,69 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Raportowanie_DE.Strony"
+             xmlns:Raportowanie_DE="clr-namespace:Raportowanie_DE" x:Class="Raportowanie_DE.Strony.Zestawienie1"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1000" Loaded="UserControl_Loaded">
+
+    <UserControl.Resources>
+        <Raportowanie_DE:JPP_DEDataSet x:Key="jPP_DEDataSet"/>
+        <CollectionViewSource x:Key="view_zestawienie_na_czynnosciViewSource" Source="{Binding View_zestawienie_na_czynnosci, Source={StaticResource jPP_DEDataSet}}"/>
+    </UserControl.Resources>
+
+    <Grid  x:Name="gridGlobal" DataContext="{StaticResource view_zestawienie_na_czynnosciViewSource}">
+
+        <DataGrid x:Name="view_zestawienie_na_czynnosciDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="33,140,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False">
+            <DataGrid.Columns>
+                
+               
+                <DataGridTextColumn x:Name="numerColumn" Width="80" Header="numer" Binding="{Binding numer}"/>
+                <DataGridTextColumn x:Name="czynnoscColumn" Width="100" Header="Czynnosc" Binding="{Binding Czynnosc}"/>
+                 <DataGridTextColumn x:Name="suma_godzinColumn" Width="80" IsReadOnly="True" Header="suma godzin" Binding="{Binding suma_godzin}"/>
+                <DataGridTextColumn x:Name="skrocona_nazwaColumn"  Header="Skrocona nazwa" Binding="{Binding Skrocona_nazwa}" Visibility="Hidden"/>
+                <DataGridTextColumn x:Name="pelna_nazwaColumn" Width="SizeToHeader" Header="Pelna nazwa" Binding="{Binding Pelna_nazwa}" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="koordynatorColumn" Width="SizeToHeader" Header="Koordynator" Binding="{Binding Koordynator}" Visibility="Hidden" />
+                <DataGridTextColumn x:Name="klientColumn" Width="100" Header="Klient" Binding="{Binding Klient}"/>
+                <DataGridTextColumn x:Name="operatorColumn" Width="100" Header="Operator" Binding="{Binding Operator}"/>
+                
+                <DataGridTextColumn x:Name="statusColumn" Width="100" Header="Status" Binding="{Binding Status}"/>
+                <DataGridTextColumn x:Name="aktywnyColumn" Width="100" Header="Aktywny" Binding="{Binding Aktywny}"/>
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Grid x:Name="grid2"  HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Height="70" Width="323" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90.764"/>
+                <ColumnDefinition Width="14.236"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Label Content="Skrocona nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+            <ComboBox x:Name="skrocona_nazwaComboBox" Grid.Column="2" DisplayMemberPath="Skrocona_nazwa" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3,6,-80,6" Grid.Row="0" VerticalAlignment="Center" Width="205"
+                SelectionChanged="numer_wewComboBox_selectionchanged" IsEditable="True">
+            </ComboBox>
+
+            <Label Content="numer wew:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4,0,3" Grid.Row="1" VerticalAlignment="Center"/>
+            <ComboBox x:Name="numer_wewComboBox" Grid.Column="2" DisplayMemberPath="numer" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3,6,0,5" Grid.Row="1" VerticalAlignment="Center" Width="120"
+                      SelectionChanged="numer_wewComboBox_selectionchanged" IsEditable="True">
+            </ComboBox>
+
+        </Grid>
+
+        <CheckBox x:Name="checkBox" Content="Z podziałem na zadania" HorizontalAlignment="Left" Margin="368,106,0,0" VerticalAlignment="Top" 
+                Click="checkBox_Checked" IsChecked="True"/>
+        <Label x:Name="label" Content="Szukaj po:" HorizontalAlignment="Left" Margin="119,17,0,0" VerticalAlignment="Top" Width="74"/>
+        <Label x:Name="label1" Content="Zestawienie godzin na projekty" HorizontalAlignment="Left" Margin="343,12,0,0" VerticalAlignment="Top" Width="245" FontSize="16"/>
+
+
+
+
+
+    </Grid>
+</UserControl>

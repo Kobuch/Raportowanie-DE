@@ -62,6 +62,9 @@
     <Compile Include="JPP_DEDataSet.cs">
       <DependentUpon>JPP_DEDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Okna\przeglad_osoby.xaml.cs">
+      <DependentUpon>przeglad_osoby.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Strony\Kontrola_pracownikow.xaml.cs">
       <DependentUpon>Kontrola_pracownikow.xaml</DependentUpon>
     </Compile>
@@ -71,11 +74,17 @@
     <Compile Include="Strony\Add_projects.xaml.cs">
       <DependentUpon>Add_projects.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Strony\Raport1.xaml.cs">
+      <DependentUpon>Raport1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Strony\Raportowanie.xaml.cs">
       <DependentUpon>Raportowanie.xaml</DependentUpon>
     </Compile>
     <Compile Include="Strony\slowniki.xaml.cs">
       <DependentUpon>slowniki.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Strony\Zestawienie1.xaml.cs">
+      <DependentUpon>Zestawienie1.xaml</DependentUpon>
     </Compile>
     <Compile Include="testowe.xaml.cs">
       <DependentUpon>testowe.xaml</DependentUpon>
@@ -105,6 +114,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Okna\przeglad_osoby.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Strony\Kontrola_pracownikow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -117,11 +130,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Strony\Raport1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Strony\Raportowanie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Strony\slowniki.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Strony\Zestawienie1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

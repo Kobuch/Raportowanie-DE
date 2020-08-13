@@ -46,6 +46,10 @@ namespace Raportowanie_DE {
         
         private slownik_statusDataTable tableslownik_status;
         
+        private View_Zest1_sumagodzin_K_O_W_RDataTable tableView_Zest1_sumagodzin_K_O_W_R;
+        
+        private View_Zest2_sumagodzin_K_O_W_R_P_CDataTable tableView_Zest2_sumagodzin_K_O_W_R_P_C;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -106,6 +110,12 @@ namespace Raportowanie_DE {
                 }
                 if ((ds.Tables["slownik_status"] != null)) {
                     base.Tables.Add(new slownik_statusDataTable(ds.Tables["slownik_status"]));
+                }
+                if ((ds.Tables["View_Zest1_sumagodzin_K_O_W_R"] != null)) {
+                    base.Tables.Add(new View_Zest1_sumagodzin_K_O_W_RDataTable(ds.Tables["View_Zest1_sumagodzin_K_O_W_R"]));
+                }
+                if ((ds.Tables["View_Zest2_sumagodzin_K_O_W_R_P_C"] != null)) {
+                    base.Tables.Add(new View_Zest2_sumagodzin_K_O_W_R_P_CDataTable(ds.Tables["View_Zest2_sumagodzin_K_O_W_R_P_C"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -237,6 +247,26 @@ namespace Raportowanie_DE {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public View_Zest1_sumagodzin_K_O_W_RDataTable View_Zest1_sumagodzin_K_O_W_R {
+            get {
+                return this.tableView_Zest1_sumagodzin_K_O_W_R;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public View_Zest2_sumagodzin_K_O_W_R_P_CDataTable View_Zest2_sumagodzin_K_O_W_R_P_C {
+            get {
+                return this.tableView_Zest2_sumagodzin_K_O_W_R_P_C;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -334,6 +364,12 @@ namespace Raportowanie_DE {
                 }
                 if ((ds.Tables["slownik_status"] != null)) {
                     base.Tables.Add(new slownik_statusDataTable(ds.Tables["slownik_status"]));
+                }
+                if ((ds.Tables["View_Zest1_sumagodzin_K_O_W_R"] != null)) {
+                    base.Tables.Add(new View_Zest1_sumagodzin_K_O_W_RDataTable(ds.Tables["View_Zest1_sumagodzin_K_O_W_R"]));
+                }
+                if ((ds.Tables["View_Zest2_sumagodzin_K_O_W_R_P_C"] != null)) {
+                    base.Tables.Add(new View_Zest2_sumagodzin_K_O_W_R_P_CDataTable(ds.Tables["View_Zest2_sumagodzin_K_O_W_R_P_C"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -434,6 +470,18 @@ namespace Raportowanie_DE {
                     this.tableslownik_status.InitVars();
                 }
             }
+            this.tableView_Zest1_sumagodzin_K_O_W_R = ((View_Zest1_sumagodzin_K_O_W_RDataTable)(base.Tables["View_Zest1_sumagodzin_K_O_W_R"]));
+            if ((initTable == true)) {
+                if ((this.tableView_Zest1_sumagodzin_K_O_W_R != null)) {
+                    this.tableView_Zest1_sumagodzin_K_O_W_R.InitVars();
+                }
+            }
+            this.tableView_Zest2_sumagodzin_K_O_W_R_P_C = ((View_Zest2_sumagodzin_K_O_W_R_P_CDataTable)(base.Tables["View_Zest2_sumagodzin_K_O_W_R_P_C"]));
+            if ((initTable == true)) {
+                if ((this.tableView_Zest2_sumagodzin_K_O_W_R_P_C != null)) {
+                    this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -466,6 +514,10 @@ namespace Raportowanie_DE {
             base.Tables.Add(this.tableSlownik_operator);
             this.tableslownik_status = new slownik_statusDataTable();
             base.Tables.Add(this.tableslownik_status);
+            this.tableView_Zest1_sumagodzin_K_O_W_R = new View_Zest1_sumagodzin_K_O_W_RDataTable();
+            base.Tables.Add(this.tableView_Zest1_sumagodzin_K_O_W_R);
+            this.tableView_Zest2_sumagodzin_K_O_W_R_P_C = new View_Zest2_sumagodzin_K_O_W_R_P_CDataTable();
+            base.Tables.Add(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -531,6 +583,18 @@ namespace Raportowanie_DE {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeslownik_status() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeView_Zest1_sumagodzin_K_O_W_R() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeView_Zest2_sumagodzin_K_O_W_R_P_C() {
             return false;
         }
         
@@ -621,6 +685,12 @@ namespace Raportowanie_DE {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void slownik_statusRowChangeEventHandler(object sender, slownik_statusRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void View_Zest1_sumagodzin_K_O_W_RRowChangeEventHandler(object sender, View_Zest1_sumagodzin_K_O_W_RRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEventHandler(object sender, View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4398,6 +4468,648 @@ namespace Raportowanie_DE {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class View_Zest1_sumagodzin_K_O_W_RDataTable : global::System.Data.TypedTableBase<View_Zest1_sumagodzin_K_O_W_RRow> {
+            
+            private global::System.Data.DataColumn columnsuma_godzin;
+            
+            private global::System.Data.DataColumn columnKlient;
+            
+            private global::System.Data.DataColumn columnOperator;
+            
+            private global::System.Data.DataColumn columnWEEK;
+            
+            private global::System.Data.DataColumn columnROK;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RDataTable() {
+                this.TableName = "View_Zest1_sumagodzin_K_O_W_R";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal View_Zest1_sumagodzin_K_O_W_RDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected View_Zest1_sumagodzin_K_O_W_RDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn suma_godzinColumn {
+                get {
+                    return this.columnsuma_godzin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn KlientColumn {
+                get {
+                    return this.columnKlient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperatorColumn {
+                get {
+                    return this.columnOperator;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WEEKColumn {
+                get {
+                    return this.columnWEEK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ROKColumn {
+                get {
+                    return this.columnROK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RRow this[int index] {
+                get {
+                    return ((View_Zest1_sumagodzin_K_O_W_RRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest1_sumagodzin_K_O_W_RRowChangeEventHandler View_Zest1_sumagodzin_K_O_W_RRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest1_sumagodzin_K_O_W_RRowChangeEventHandler View_Zest1_sumagodzin_K_O_W_RRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest1_sumagodzin_K_O_W_RRowChangeEventHandler View_Zest1_sumagodzin_K_O_W_RRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest1_sumagodzin_K_O_W_RRowChangeEventHandler View_Zest1_sumagodzin_K_O_W_RRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddView_Zest1_sumagodzin_K_O_W_RRow(View_Zest1_sumagodzin_K_O_W_RRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RRow AddView_Zest1_sumagodzin_K_O_W_RRow(int suma_godzin, string Klient, string Operator, int WEEK, int ROK) {
+                View_Zest1_sumagodzin_K_O_W_RRow rowView_Zest1_sumagodzin_K_O_W_RRow = ((View_Zest1_sumagodzin_K_O_W_RRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        suma_godzin,
+                        Klient,
+                        Operator,
+                        WEEK,
+                        ROK};
+                rowView_Zest1_sumagodzin_K_O_W_RRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowView_Zest1_sumagodzin_K_O_W_RRow);
+                return rowView_Zest1_sumagodzin_K_O_W_RRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                View_Zest1_sumagodzin_K_O_W_RDataTable cln = ((View_Zest1_sumagodzin_K_O_W_RDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new View_Zest1_sumagodzin_K_O_W_RDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnsuma_godzin = base.Columns["suma_godzin"];
+                this.columnKlient = base.Columns["Klient"];
+                this.columnOperator = base.Columns["Operator"];
+                this.columnWEEK = base.Columns["WEEK"];
+                this.columnROK = base.Columns["ROK"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnsuma_godzin = new global::System.Data.DataColumn("suma_godzin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsuma_godzin);
+                this.columnKlient = new global::System.Data.DataColumn("Klient", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKlient);
+                this.columnOperator = new global::System.Data.DataColumn("Operator", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperator);
+                this.columnWEEK = new global::System.Data.DataColumn("WEEK", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWEEK);
+                this.columnROK = new global::System.Data.DataColumn("ROK", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROK);
+                this.columnsuma_godzin.ReadOnly = true;
+                this.columnKlient.MaxLength = 40;
+                this.columnOperator.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RRow NewView_Zest1_sumagodzin_K_O_W_RRow() {
+                return ((View_Zest1_sumagodzin_K_O_W_RRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new View_Zest1_sumagodzin_K_O_W_RRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(View_Zest1_sumagodzin_K_O_W_RRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.View_Zest1_sumagodzin_K_O_W_RRowChanged != null)) {
+                    this.View_Zest1_sumagodzin_K_O_W_RRowChanged(this, new View_Zest1_sumagodzin_K_O_W_RRowChangeEvent(((View_Zest1_sumagodzin_K_O_W_RRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.View_Zest1_sumagodzin_K_O_W_RRowChanging != null)) {
+                    this.View_Zest1_sumagodzin_K_O_W_RRowChanging(this, new View_Zest1_sumagodzin_K_O_W_RRowChangeEvent(((View_Zest1_sumagodzin_K_O_W_RRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.View_Zest1_sumagodzin_K_O_W_RRowDeleted != null)) {
+                    this.View_Zest1_sumagodzin_K_O_W_RRowDeleted(this, new View_Zest1_sumagodzin_K_O_W_RRowChangeEvent(((View_Zest1_sumagodzin_K_O_W_RRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.View_Zest1_sumagodzin_K_O_W_RRowDeleting != null)) {
+                    this.View_Zest1_sumagodzin_K_O_W_RRowDeleting(this, new View_Zest1_sumagodzin_K_O_W_RRowChangeEvent(((View_Zest1_sumagodzin_K_O_W_RRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveView_Zest1_sumagodzin_K_O_W_RRow(View_Zest1_sumagodzin_K_O_W_RRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                JPP_DEDataSet ds = new JPP_DEDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "View_Zest1_sumagodzin_K_O_W_RDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class View_Zest2_sumagodzin_K_O_W_R_P_CDataTable : global::System.Data.TypedTableBase<View_Zest2_sumagodzin_K_O_W_R_P_CRow> {
+            
+            private global::System.Data.DataColumn columnsuma_godzin;
+            
+            private global::System.Data.DataColumn columnKlient;
+            
+            private global::System.Data.DataColumn columnOperator;
+            
+            private global::System.Data.DataColumn columnWEEK;
+            
+            private global::System.Data.DataColumn columnROK;
+            
+            private global::System.Data.DataColumn columnProjekt;
+            
+            private global::System.Data.DataColumn columnCzynnosc;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CDataTable() {
+                this.TableName = "View_Zest2_sumagodzin_K_O_W_R_P_C";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal View_Zest2_sumagodzin_K_O_W_R_P_CDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected View_Zest2_sumagodzin_K_O_W_R_P_CDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn suma_godzinColumn {
+                get {
+                    return this.columnsuma_godzin;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn KlientColumn {
+                get {
+                    return this.columnKlient;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn OperatorColumn {
+                get {
+                    return this.columnOperator;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WEEKColumn {
+                get {
+                    return this.columnWEEK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ROKColumn {
+                get {
+                    return this.columnROK;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ProjektColumn {
+                get {
+                    return this.columnProjekt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CzynnoscColumn {
+                get {
+                    return this.columnCzynnosc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CRow this[int index] {
+                get {
+                    return ((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEventHandler View_Zest2_sumagodzin_K_O_W_R_P_CRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEventHandler View_Zest2_sumagodzin_K_O_W_R_P_CRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEventHandler View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEventHandler View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddView_Zest2_sumagodzin_K_O_W_R_P_CRow(View_Zest2_sumagodzin_K_O_W_R_P_CRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CRow AddView_Zest2_sumagodzin_K_O_W_R_P_CRow(int suma_godzin, string Klient, string Operator, int WEEK, int ROK, string Projekt, string Czynnosc) {
+                View_Zest2_sumagodzin_K_O_W_R_P_CRow rowView_Zest2_sumagodzin_K_O_W_R_P_CRow = ((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        suma_godzin,
+                        Klient,
+                        Operator,
+                        WEEK,
+                        ROK,
+                        Projekt,
+                        Czynnosc};
+                rowView_Zest2_sumagodzin_K_O_W_R_P_CRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowView_Zest2_sumagodzin_K_O_W_R_P_CRow);
+                return rowView_Zest2_sumagodzin_K_O_W_R_P_CRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                View_Zest2_sumagodzin_K_O_W_R_P_CDataTable cln = ((View_Zest2_sumagodzin_K_O_W_R_P_CDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new View_Zest2_sumagodzin_K_O_W_R_P_CDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnsuma_godzin = base.Columns["suma_godzin"];
+                this.columnKlient = base.Columns["Klient"];
+                this.columnOperator = base.Columns["Operator"];
+                this.columnWEEK = base.Columns["WEEK"];
+                this.columnROK = base.Columns["ROK"];
+                this.columnProjekt = base.Columns["Projekt"];
+                this.columnCzynnosc = base.Columns["Czynnosc"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnsuma_godzin = new global::System.Data.DataColumn("suma_godzin", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnsuma_godzin);
+                this.columnKlient = new global::System.Data.DataColumn("Klient", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKlient);
+                this.columnOperator = new global::System.Data.DataColumn("Operator", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOperator);
+                this.columnWEEK = new global::System.Data.DataColumn("WEEK", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWEEK);
+                this.columnROK = new global::System.Data.DataColumn("ROK", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnROK);
+                this.columnProjekt = new global::System.Data.DataColumn("Projekt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnProjekt);
+                this.columnCzynnosc = new global::System.Data.DataColumn("Czynnosc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCzynnosc);
+                this.columnsuma_godzin.ReadOnly = true;
+                this.columnKlient.MaxLength = 40;
+                this.columnOperator.MaxLength = 50;
+                this.columnProjekt.MaxLength = 100;
+                this.columnCzynnosc.MaxLength = 20;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CRow NewView_Zest2_sumagodzin_K_O_W_R_P_CRow() {
+                return ((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new View_Zest2_sumagodzin_K_O_W_R_P_CRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(View_Zest2_sumagodzin_K_O_W_R_P_CRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.View_Zest2_sumagodzin_K_O_W_R_P_CRowChanged != null)) {
+                    this.View_Zest2_sumagodzin_K_O_W_R_P_CRowChanged(this, new View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent(((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.View_Zest2_sumagodzin_K_O_W_R_P_CRowChanging != null)) {
+                    this.View_Zest2_sumagodzin_K_O_W_R_P_CRowChanging(this, new View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent(((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleted != null)) {
+                    this.View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleted(this, new View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent(((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleting != null)) {
+                    this.View_Zest2_sumagodzin_K_O_W_R_P_CRowDeleting(this, new View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent(((View_Zest2_sumagodzin_K_O_W_R_P_CRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveView_Zest2_sumagodzin_K_O_W_R_P_CRow(View_Zest2_sumagodzin_K_O_W_R_P_CRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                JPP_DEDataSet ds = new JPP_DEDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "View_Zest2_sumagodzin_K_O_W_R_P_CDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class Lista_czynnosciRow : global::System.Data.DataRow {
@@ -6446,6 +7158,378 @@ namespace Raportowanie_DE {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class View_Zest1_sumagodzin_K_O_W_RRow : global::System.Data.DataRow {
+            
+            private View_Zest1_sumagodzin_K_O_W_RDataTable tableView_Zest1_sumagodzin_K_O_W_R;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal View_Zest1_sumagodzin_K_O_W_RRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableView_Zest1_sumagodzin_K_O_W_R = ((View_Zest1_sumagodzin_K_O_W_RDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int suma_godzin {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest1_sumagodzin_K_O_W_R.suma_godzinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'suma_godzin\' w tabeli \'View_Zest1_sumagodzin_K_O_W_R\' to DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest1_sumagodzin_K_O_W_R.suma_godzinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Klient {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest1_sumagodzin_K_O_W_R.KlientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Klient\' w tabeli \'View_Zest1_sumagodzin_K_O_W_R\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest1_sumagodzin_K_O_W_R.KlientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Operator {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest1_sumagodzin_K_O_W_R.OperatorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Operator\' w tabeli \'View_Zest1_sumagodzin_K_O_W_R\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest1_sumagodzin_K_O_W_R.OperatorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int WEEK {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest1_sumagodzin_K_O_W_R.WEEKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WEEK\' w tabeli \'View_Zest1_sumagodzin_K_O_W_R\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest1_sumagodzin_K_O_W_R.WEEKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ROK {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest1_sumagodzin_K_O_W_R.ROKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ROK\' w tabeli \'View_Zest1_sumagodzin_K_O_W_R\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest1_sumagodzin_K_O_W_R.ROKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issuma_godzinNull() {
+                return this.IsNull(this.tableView_Zest1_sumagodzin_K_O_W_R.suma_godzinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsuma_godzinNull() {
+                this[this.tableView_Zest1_sumagodzin_K_O_W_R.suma_godzinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsKlientNull() {
+                return this.IsNull(this.tableView_Zest1_sumagodzin_K_O_W_R.KlientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetKlientNull() {
+                this[this.tableView_Zest1_sumagodzin_K_O_W_R.KlientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperatorNull() {
+                return this.IsNull(this.tableView_Zest1_sumagodzin_K_O_W_R.OperatorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperatorNull() {
+                this[this.tableView_Zest1_sumagodzin_K_O_W_R.OperatorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWEEKNull() {
+                return this.IsNull(this.tableView_Zest1_sumagodzin_K_O_W_R.WEEKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWEEKNull() {
+                this[this.tableView_Zest1_sumagodzin_K_O_W_R.WEEKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsROKNull() {
+                return this.IsNull(this.tableView_Zest1_sumagodzin_K_O_W_R.ROKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetROKNull() {
+                this[this.tableView_Zest1_sumagodzin_K_O_W_R.ROKColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class View_Zest2_sumagodzin_K_O_W_R_P_CRow : global::System.Data.DataRow {
+            
+            private View_Zest2_sumagodzin_K_O_W_R_P_CDataTable tableView_Zest2_sumagodzin_K_O_W_R_P_C;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal View_Zest2_sumagodzin_K_O_W_R_P_CRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableView_Zest2_sumagodzin_K_O_W_R_P_C = ((View_Zest2_sumagodzin_K_O_W_R_P_CDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int suma_godzin {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.suma_godzinColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'suma_godzin\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.suma_godzinColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Klient {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.KlientColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Klient\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.KlientColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Operator {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.OperatorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Operator\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.OperatorColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int WEEK {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.WEEKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'WEEK\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.WEEKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int ROK {
+                get {
+                    try {
+                        return ((int)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ROKColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'ROK\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ROKColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Projekt {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ProjektColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Projekt\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ProjektColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Czynnosc {
+                get {
+                    try {
+                        return ((string)(this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.CzynnoscColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Wartość z kolumny \'Czynnosc\' w tabeli \'View_Zest2_sumagodzin_K_O_W_R_P_C\' to DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.CzynnoscColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Issuma_godzinNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.suma_godzinColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setsuma_godzinNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.suma_godzinColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsKlientNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.KlientColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetKlientNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.KlientColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsOperatorNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.OperatorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetOperatorNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.OperatorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWEEKNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.WEEKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWEEKNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.WEEKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsROKNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ROKColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetROKNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ROKColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsProjektNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ProjektColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetProjektNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.ProjektColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCzynnoscNull() {
+                return this.IsNull(this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.CzynnoscColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCzynnoscNull() {
+                this[this.tableView_Zest2_sumagodzin_K_O_W_R_P_C.CzynnoscColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -6805,6 +7889,74 @@ namespace Raportowanie_DE {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public slownik_statusRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class View_Zest1_sumagodzin_K_O_W_RRowChangeEvent : global::System.EventArgs {
+            
+            private View_Zest1_sumagodzin_K_O_W_RRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RRowChangeEvent(View_Zest1_sumagodzin_K_O_W_RRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest1_sumagodzin_K_O_W_RRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent : global::System.EventArgs {
+            
+            private View_Zest2_sumagodzin_K_O_W_R_P_CRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CRowChangeEvent(View_Zest2_sumagodzin_K_O_W_R_P_CRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public View_Zest2_sumagodzin_K_O_W_R_P_CRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -7361,7 +8513,7 @@ SELECT Id_lista_czynn, czynnosc, Rynek FROM Lista_czynnosci WHERE (Id_lista_czyn
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Lista_projektow] WHERE (([ID_lista_proj] = @Original_ID_lista_proj) AND ((@IsNull_numer = 1 AND [numer] IS NULL) OR ([numer] = @Original_numer)) AND ((@IsNull_Skrocona_nazwa = 1 AND [Skrocona_nazwa] IS NULL) OR ([Skrocona_nazwa] = @Original_Skrocona_nazwa)) AND ((@IsNull_Pelna_nazwa = 1 AND [Pelna_nazwa] IS NULL) OR ([Pelna_nazwa] = @Original_Pelna_nazwa)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)) AND ((@IsNull_Koordynator = 1 AND [Koordynator] IS NULL) OR ([Koordynator] = @Original_Koordynator)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)) AND ([Mozna_usuwac] = @Original_Mozna_usuwac))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Lista_projektow] WHERE (([ID_lista_proj] = @Original_ID_lista_proj) AND ((@IsNull_numer = 1 AND [numer] IS NULL) OR ([numer] = @Original_numer)) AND ((@IsNull_Skrocona_nazwa = 1 AND [Skrocona_nazwa] IS NULL) OR ([Skrocona_nazwa] = @Original_Skrocona_nazwa)) AND ((@IsNull_Pelna_nazwa = 1 AND [Pelna_nazwa] IS NULL) OR ([Pelna_nazwa] = @Original_Pelna_nazwa)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)) AND ((@IsNull_Koordynator = 1 AND [Koordynator] IS NULL) OR ([Koordynator] = @Original_Koordynator)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)) AND ([Mozna_usuwac] = @Original_Mozna_usuwac))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_lista_proj", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_lista_proj", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_numer", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -7383,8 +8535,8 @@ SELECT Id_lista_czynn, czynnosc, Rynek FROM Lista_czynnosci WHERE (Id_lista_czyn
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Mozna_usuwac", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mozna_usuwac", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Lista_projektow] ([numer], [Skrocona_nazwa], [Pelna_nazwa], [Klient], [Operator], [Koordynator], [Status], [Aktywny], [Mozna_usuwac]) VALUES (@numer, @Skrocona_nazwa, @Pelna_nazwa, @Klient, @Operator, @Koordynator, @Status, @Aktywny, @Mozna_usuwac);
-SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koordynator, Status, Aktywny, Mozna_usuwac FROM Lista_projektow WHERE (ID_lista_proj = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Lista_projektow] ([numer], [Skrocona_nazwa], [Pelna_nazwa], [Klient], [Operator], [Koordynator], [Status], [Aktywny], [Mozna_usuwac]) VALUES (@numer, @Skrocona_nazwa, @Pelna_nazwa, @Klient, @Operator, @Koordynator, @Status, @Aktywny, @Mozna_usuwac);
+SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koordynator, Status, Aktywny, Mozna_usuwac FROM Lista_projektow WHERE (ID_lista_proj = SCOPE_IDENTITY()) ORDER BY numer";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Skrocona_nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Skrocona_nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7397,8 +8549,8 @@ SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koor
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Mozna_usuwac", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Mozna_usuwac", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Lista_projektow] SET [numer] = @numer, [Skrocona_nazwa] = @Skrocona_nazwa, [Pelna_nazwa] = @Pelna_nazwa, [Klient] = @Klient, [Operator] = @Operator, [Koordynator] = @Koordynator, [Status] = @Status, [Aktywny] = @Aktywny, [Mozna_usuwac] = @Mozna_usuwac WHERE (([ID_lista_proj] = @Original_ID_lista_proj) AND ((@IsNull_numer = 1 AND [numer] IS NULL) OR ([numer] = @Original_numer)) AND ((@IsNull_Skrocona_nazwa = 1 AND [Skrocona_nazwa] IS NULL) OR ([Skrocona_nazwa] = @Original_Skrocona_nazwa)) AND ((@IsNull_Pelna_nazwa = 1 AND [Pelna_nazwa] IS NULL) OR ([Pelna_nazwa] = @Original_Pelna_nazwa)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)) AND ((@IsNull_Koordynator = 1 AND [Koordynator] IS NULL) OR ([Koordynator] = @Original_Koordynator)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)) AND ([Mozna_usuwac] = @Original_Mozna_usuwac));
-SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koordynator, Status, Aktywny, Mozna_usuwac FROM Lista_projektow WHERE (ID_lista_proj = @ID_lista_proj)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Lista_projektow] SET [numer] = @numer, [Skrocona_nazwa] = @Skrocona_nazwa, [Pelna_nazwa] = @Pelna_nazwa, [Klient] = @Klient, [Operator] = @Operator, [Koordynator] = @Koordynator, [Status] = @Status, [Aktywny] = @Aktywny, [Mozna_usuwac] = @Mozna_usuwac WHERE (([ID_lista_proj] = @Original_ID_lista_proj) AND ((@IsNull_numer = 1 AND [numer] IS NULL) OR ([numer] = @Original_numer)) AND ((@IsNull_Skrocona_nazwa = 1 AND [Skrocona_nazwa] IS NULL) OR ([Skrocona_nazwa] = @Original_Skrocona_nazwa)) AND ((@IsNull_Pelna_nazwa = 1 AND [Pelna_nazwa] IS NULL) OR ([Pelna_nazwa] = @Original_Pelna_nazwa)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)) AND ((@IsNull_Koordynator = 1 AND [Koordynator] IS NULL) OR ([Koordynator] = @Original_Koordynator)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)) AND ([Mozna_usuwac] = @Original_Mozna_usuwac));
+SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koordynator, Status, Aktywny, Mozna_usuwac FROM Lista_projektow WHERE (ID_lista_proj = @ID_lista_proj) ORDER BY numer";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Skrocona_nazwa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Skrocona_nazwa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -7444,29 +8596,30 @@ SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koor
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koord" +
-                "ynator, Status, Aktywny, Mozna_usuwac FROM dbo.Lista_projektow";
+            this._commandCollection[0].CommandText = "SELECT        ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator" +
+                ", Koordynator, Status, Aktywny, Mozna_usuwac\r\nFROM            Lista_projektow\r\nO" +
+                "RDER BY numer";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator" +
-                ", Koordynator, Status, Aktywny, Mozna_usuwac\r\nFROM            Lista_projektow\r\nW" +
-                "HERE        (Aktywny = @_Aktywny)";
+            this._commandCollection[1].CommandText = "SELECT        Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator" +
+                ", Pelna_nazwa, Skrocona_nazwa, Status, numer\r\nFROM            Lista_projektow\r\nW" +
+                "HERE        (Aktywny = @_Aktywny)\r\nORDER BY numer";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_Aktywny", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Aktywny", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "SELECT        ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator" +
-                ", Koordynator, Status, Aktywny, Mozna_usuwac\r\nFROM            Lista_projektow\r\nW" +
-                "HERE        (Aktywny = @_Aktywne) AND (Operator = @_Operator)";
+            this._commandCollection[2].CommandText = "SELECT Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator, Pelna" +
+                "_nazwa, Skrocona_nazwa, Status, numer FROM Lista_projektow WHERE (Aktywny = @_Ak" +
+                "tywne) AND (Operator = @_Operator)";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_Aktywne", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Aktywny", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_Operator", global::System.Data.SqlDbType.NVarChar, 40, global::System.Data.ParameterDirection.Input, 0, 0, "Operator", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
-            this._commandCollection[3].CommandText = "SELECT        ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator" +
-                ", Koordynator, Status, Aktywny, Mozna_usuwac\r\nFROM            Lista_projektow\r\nW" +
-                "HERE        (numer LIKE N\'%\' + @numer + N\'%\') AND (Aktywny = @Aktywny)";
+            this._commandCollection[3].CommandText = "SELECT Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator, Pelna" +
+                "_nazwa, Skrocona_nazwa, Status, numer FROM Lista_projektow WHERE (numer LIKE N\'%" +
+                "\' + @numer + N\'%\') AND (Aktywny = @Aktywny)";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@numer", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Aktywny", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "Aktywny", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -9100,12 +10253,19 @@ SELECT ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT suma_godzin, numer, Czynnosc, Skrocona_nazwa, Pelna_nazwa, Koordynator, St" +
                 "atus, Aktywny, Klient, Operator FROM dbo.[View_zestawienie_na czynnosci]";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        suma_godzin, numer, Czynnosc, Skrocona_nazwa, Pelna_nazwa, Koordyna" +
+                "tor, Status, Aktywny, Klient, Operator\r\nFROM            [View_zestawienie_na czy" +
+                "nnosci]\r\nWHERE        (numer = @_numer)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_numer", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9127,6 +10287,42 @@ SELECT ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, A
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable dataTable = new JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_by_nr_wew(JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable dataTable, string _numer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((_numer == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_numer));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable GetDataBy(string _numer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((_numer == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_numer));
+            }
             JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable dataTable = new JPP_DEDataSet.View_zestawienie_na_czynnosciDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -9277,12 +10473,19 @@ SELECT ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT suma_godzin, numer, Skrocona_nazwa, Pelna_nazwa, Koordynator, Status, Akty" +
                 "wny, Klient, Operator FROM dbo.View_Zestawienie_na_projekty";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        suma_godzin, numer, Skrocona_nazwa, Pelna_nazwa, Koordynator, Statu" +
+                "s, Aktywny, Klient, Operator\r\nFROM            View_Zestawienie_na_projekty\r\nWHER" +
+                "E        (numer = @_numer)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@_numer", global::System.Data.SqlDbType.NVarChar, 15, global::System.Data.ParameterDirection.Input, 0, 0, "numer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9304,6 +10507,42 @@ SELECT ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, A
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual JPP_DEDataSet.View_Zestawienie_na_projektyDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            JPP_DEDataSet.View_Zestawienie_na_projektyDataTable dataTable = new JPP_DEDataSet.View_Zestawienie_na_projektyDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_by_nr_wew(JPP_DEDataSet.View_Zestawienie_na_projektyDataTable dataTable, string _numer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((_numer == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_numer));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual JPP_DEDataSet.View_Zestawienie_na_projektyDataTable GetDataBy(string _numer) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((_numer == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_numer));
+            }
             JPP_DEDataSet.View_Zestawienie_na_projektyDataTable dataTable = new JPP_DEDataSet.View_Zestawienie_na_projektyDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -11857,6 +13096,492 @@ SELECT Id_operator, Operator FROM Slownik_operator WHERE (Id_operator = @Id_oper
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(string Status, int Original_ID_status, string Original_Status) {
             return this.Update(Status, Original_ID_status, Original_Status, Original_ID_status);
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class View_Zest1_sumagodzin_K_O_W_RTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public View_Zest1_sumagodzin_K_O_W_RTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "View_Zest1_sumagodzin_K_O_W_R";
+            tableMapping.ColumnMappings.Add("suma_godzin", "suma_godzin");
+            tableMapping.ColumnMappings.Add("Klient", "Klient");
+            tableMapping.ColumnMappings.Add("Operator", "Operator");
+            tableMapping.ColumnMappings.Add("WEEK", "WEEK");
+            tableMapping.ColumnMappings.Add("ROK", "ROK");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=serwer2019;Initial Catalog=JPP_DE;User ID=JPP_pracownicy;Password=JPP" +
+                "_pracownicy2020";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        suma_godzin, Klient, Operator, WEEK, ROK\r\nFROM            View_Zest" +
+                "1_sumagodzin_K_O_W_R";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        suma_godzin, Klient, Operator, WEEK, ROK\r\nFROM            View_Zest" +
+                "1_sumagodzin_K_O_W_R\r\nWHERE        (ROK = @rok) AND (WEEK >= @weekstart) AND (WE" +
+                "EK <= @weekend)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rok", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ROK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weekstart", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "WEEK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weekend", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "WEEK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable dataTable = new JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_weekstart_i_koniec(JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable dataTable, global::System.Nullable<int> rok, global::System.Nullable<int> weekstart, global::System.Nullable<int> weekend) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((rok.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(rok.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((weekstart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(weekstart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((weekend.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(weekend.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable GetDataBy(global::System.Nullable<int> rok, global::System.Nullable<int> weekstart, global::System.Nullable<int> weekend) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((rok.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(rok.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((weekstart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(weekstart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((weekend.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(weekend.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable dataTable = new JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class View_Zest2_sumagodzin_K_O_W_R_P_CTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public View_Zest2_sumagodzin_K_O_W_R_P_CTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "View_Zest2_sumagodzin_K_O_W_R_P_C";
+            tableMapping.ColumnMappings.Add("suma_godzin", "suma_godzin");
+            tableMapping.ColumnMappings.Add("Klient", "Klient");
+            tableMapping.ColumnMappings.Add("Operator", "Operator");
+            tableMapping.ColumnMappings.Add("WEEK", "WEEK");
+            tableMapping.ColumnMappings.Add("ROK", "ROK");
+            tableMapping.ColumnMappings.Add("Projekt", "Projekt");
+            tableMapping.ColumnMappings.Add("Czynnosc", "Czynnosc");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = "Data Source=serwer2019;Initial Catalog=JPP_DE;User ID=JPP_pracownicy;Password=JPP" +
+                "_pracownicy2020";
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT        suma_godzin, Klient, Operator, WEEK, ROK, Projekt, Czynnosc\r\nFROM  " +
+                "          View_Zest2_sumagodzin_K_O_W_R_P_C";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT        suma_godzin, Klient, Operator, WEEK, ROK, Projekt, Czynnosc\r\nFROM  " +
+                "          View_Zest2_sumagodzin_K_O_W_R_P_C\r\nWHERE        (ROK = @rok) AND (WEEK" +
+                " >= @weekstart) AND (WEEK <= @weekend)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rok", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ROK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weekstart", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "WEEK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@weekend", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "WEEK", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable dataTable = new JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy_rok_weekstart_end(JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable dataTable, global::System.Nullable<int> rok, global::System.Nullable<int> weekstart, global::System.Nullable<int> weekend) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((rok.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(rok.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((weekstart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(weekstart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((weekend.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(weekend.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable GetDataBy(global::System.Nullable<int> rok, global::System.Nullable<int> weekstart, global::System.Nullable<int> weekend) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((rok.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(rok.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((weekstart.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(weekstart.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((weekend.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((int)(weekend.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable dataTable = new JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
         }
     }
     

@@ -56,7 +56,7 @@
 
 
             </StackPanel>
-            <Button x:Name="buttondodajpojedynczy" Content="Dodaj 1 projekt"  IsEnabled="False" HorizontalAlignment="Left" Margin="100,3,3,3" VerticalAlignment="Top" Width="100" Click="buttondodajpojedynczy_Click" >
+            <Button x:Name="buttondodajpojedynczy" Content="Dodaj 1 projekt"   HorizontalAlignment="Left" Margin="100,3,3,3" VerticalAlignment="Top" Width="100" Click="buttondodajpojedynczy_Click" >
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect >
@@ -72,7 +72,7 @@
             <TextBox x:Name="textBoxDane" HorizontalAlignment="Left" Height="378" Margin="10,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="301"
                  AcceptsReturn="True" VerticalScrollBarVisibility="Visible"        />
 
-            <DataGrid x:Name="lista_projektowDataGrid" VerticalScrollBarVisibility="Visible"   RowDetailsVisibilityMode="VisibleWhenSelected" Margin="460,182,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionUnit="Cell" Width="523" CanUserResizeRows="False">
+            <DataGrid x:Name="lista_projektowDataGrid" VerticalScrollBarVisibility="Visible"   RowDetailsVisibilityMode="VisibleWhenSelected" Margin="460,182,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionUnit="Cell" CanUserResizeRows="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="numerColumn" Width="120" Header="numer" Binding="{Binding numer}" />
                     <DataGridTextColumn x:Name="klientColumn" Width="120" Header="Klient" Binding="{Binding Klient}"/>

@@ -43,7 +43,7 @@
         </ComboBox>
         <Button x:Name="button_Mail" Content="Generuj maila" Height="20" Margin="425,164,0,0" VerticalAlignment="Top" Click="button_Mail_Click" HorizontalAlignment="Left" Width="97"/>
 
-        <DataGrid x:Name="zestawieniedataGrid" AutoGenerateColumns="False"  HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" SelectionUnit="CellOrRowHeader" RowHeaderWidth="20">
+        <DataGrid x:Name="zestawieniedataGrid" AutoGenerateColumns="False"  HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" SelectionUnit="CellOrRowHeader" RowHeaderWidth="20" MouseDoubleClick="zestawieniedataGrid_MouseDoubleClick">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="GImie" Binding="{Binding imie}" Header="Imie" Width="80" FontSize="14"/>
                 <DataGridTextColumn x:Name="GNazwisko" Binding="{Binding nazwisko}" Header="nazwisko" Width="150"/>

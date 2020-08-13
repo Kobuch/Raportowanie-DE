@@ -321,7 +321,7 @@ namespace Raportowanie_DE.Strony
 
             try
             {
-                zestawy_GodzinTableAdapter.Insert(1, "JPP", czynnosc1, "", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
+                zestawy_GodzinTableAdapter.Insert(1, "JPP", czynnosc1, "JPP", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
                 
             }
             catch (System.Exception)
@@ -419,14 +419,14 @@ namespace Raportowanie_DE.Strony
             {
                 if (this.queriesTableAdapter.SQL_Testzestaw_ma_projekt(1, "L4", osoba, baza.RokNumber, baza.WeekNumber) == null)
                 {
-                    zestawy_GodzinTableAdapter.Insert(1, "JPP", "L4", "", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
+                    zestawy_GodzinTableAdapter.Insert(1, "JPP", "L4", "JPP", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
 
 
            
                 }
                 if (this.queriesTableAdapter.SQL_Testzestaw_ma_projekt(1, "Urlop Wypocz", osoba, baza.RokNumber, baza.WeekNumber) == null)
                 {
-                    zestawy_GodzinTableAdapter.Insert(1, "JPP", "Urlop Wypocz", "", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
+                    zestawy_GodzinTableAdapter.Insert(1, "JPP", "Urlop Wypocz", "JPP", osoba, Data1, baza.RokNumber, baza.WeekNumber, null, null, null, null, null, null, null, false, true, "JPP0001", "");
 
                 }
             }
