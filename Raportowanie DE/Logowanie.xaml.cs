@@ -61,7 +61,7 @@ namespace Raportowanie_DE
 
                 //mozna upriścic jeżeli otwierany jest ten sam program. ale tak nie będzie w przyszlosci.
 
-                if ((logowanie.Uprawnienie == "KierArch") || (logowanie.Uprawnienie == "Koordynator") || (logowanie.Uprawnienie == "Admin"))
+                if ((logowanie.Uprawnienie == "kierownik") || (logowanie.Uprawnienie == "koordynator") || (logowanie.Uprawnienie == "admin"))
                 {
                     MainWindow mainWindow = new MainWindow(logowanie.Uprawnienie, logowanie.Login, false);
                                   //( logowanie.Uprawnienie,logowanie.Login, logowanie.ZalogowanyHaslem);

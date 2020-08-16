@@ -12,19 +12,98 @@
         <CollectionViewSource x:Key="view_Zest1_sumagodzin_K_O_W_RViewSource" Source="{Binding View_Zest1_sumagodzin_K_O_W_R, Source={StaticResource jPP_DEDataSet}}"/>
         <CollectionViewSource x:Key="view_Zest2_sumagodzin_K_O_W_R_P_CViewSource" Source="{Binding View_Zest2_sumagodzin_K_O_W_R_P_C, Source={StaticResource jPP_DEDataSet}}"/>
     </UserControl.Resources>
-    <Grid DataContext="{StaticResource view_Zest1_sumagodzin_K_O_W_RViewSource}">
-        <DataGrid x:Name="view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="98,127,502,473" RowDetailsVisibilityMode="VisibleWhenSelected">
-            <DataGrid.Columns>
-                <DataGridTextColumn x:Name="suma_godzinColumn" Binding="{Binding suma_godzin}" Header="suma godzin" IsReadOnly="True" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="operatorColumn" Binding="{Binding Operator}" Header="Operator" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="wEEKColumn" Binding="{Binding WEEK}" Header="WEEK" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="rOKColumn" Binding="{Binding ROK}" Header="ROK" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="projektColumn" Binding="{Binding Projekt}" Header="Projekt" Width="SizeToHeader"/>
-                <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding Czynnosc}" Header="Czynnosc" Width="SizeToHeader"/>
-            </DataGrid.Columns>
-        </DataGrid>
-        <CheckBox x:Name="checkBox" Content="Z podziałem " HorizontalAlignment="Left" Margin="368,106,0,0" VerticalAlignment="Top" 
+
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF272727" Offset="1"/>
+                <GradientStop Color="White" Offset="0.096"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid DataContext="{StaticResource view_Zest1_sumagodzin_K_O_W_RViewSource}" Margin="0,270,0,0">
+            <DataGrid x:Name="view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="40" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="suma_godzinColumn" Binding="{Binding suma_godzin}" Header="suma godzin" IsReadOnly="True" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" />
+                    <DataGridTextColumn x:Name="operatorColumn" Binding="{Binding Operator}" Header="Operator" />
+                    <DataGridTextColumn x:Name="wEEKColumn" Binding="{Binding WEEK}" Header="WEEK" />
+                    <DataGridTextColumn x:Name="rOKColumn" Binding="{Binding ROK}" Header="ROK" />
+                    <DataGridTextColumn x:Name="projektColumn" Binding="{Binding Projekt}" Header="Projekt" />
+                    <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding Czynnosc}" Header="Czynnosc" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Orientation="Vertical">
+                <Separator Width="1" />
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
+
+                    <Button x:Name="przygoruj_raport" Content="Przygotuj raport" Width="100" Height="25" Click="przygoruj_raport_Click" Margin="30,3,3,3" >
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <CheckBox x:Name="checkBox" Content="Z podziałem na projekty i zadania" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" 
                 Click="checkBox_Checked" IsChecked="True"/>
+                    <Button x:Name="doexcela" Content="Do Excela..." Width="100" Height="25" Margin="30,3,3,3" Click="doexcela_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                        
+                    </Button>
+                            
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+
+
+        <Grid x:Name="gridstart"  HorizontalAlignment="Left" Height="270" Margin="46,0,0,0" VerticalAlignment="Top" Width="247">
+            <StackPanel >
+                <Label Content="START" FontSize="16" Margin="80,0,0,0"/>
+                <Calendar x:Name="calendarstart" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" SelectionMode="SingleRange" MouseDoubleClick="calendarstart_MouseDoubleClick"/>
+                <Label x:Name="label2" Content="Wybierz tydzień początku raportu" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" />
+                <StackPanel  x:Name="startpanel" Orientation="Horizontal" >
+
+                    <Label x:Name="labelRokstart"  Content="2020" Width="60" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top"    />
+                    <Button x:Name="butWeekprevstart" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top" Width="41" Click="butWeekprev_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <TextBox x:Name="textBoxWeekstart" HorizontalAlignment="Left" Height="22" Margin="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Text="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+
+                    <Button x:Name="butWeekNextstart" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top" Width="44" Click="butWeekNext_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+        <Grid x:Name="gridkoniec"  HorizontalAlignment="Left" Height="270" Margin="350,0,0,0" VerticalAlignment="Top" Width="244">
+            <StackPanel >
+                <Label Content="KONIEC" FontSize="16" Margin="80,0,0,0"/>
+                <Calendar x:Name="calendarkoniec" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" SelectionMode="SingleRange" MouseDoubleClick="calendarkoniec_MouseDoubleClick"/>
+                <Label x:Name="label3" Content="Wybierz tydzień końca raportu" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" />
+                <StackPanel   Orientation="Horizontal" >
+
+                    <Label x:Name="labelRokkoniec"  Content="2020" Width="60" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top"    />
+                    <Button x:Name="butWeekprevkoniec" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top" Width="41" Click="butWeekprevkoniec_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                    <TextBox x:Name="textBoxWeekkoniec" HorizontalAlignment="Left" Height="22" Margin="3" TextWrapping="Wrap" VerticalAlignment="Top" Width="49" Text="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" IsReadOnly="True"/>
+
+                    <Button x:Name="butWeekNextkoniec" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="3" VerticalAlignment="Top" Width="44" Click="butWeekNextkoniec_Click">
+                        <Button.Effect>
+                            <DropShadowEffect/>
+                        </Button.Effect>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </UserControl>

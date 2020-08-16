@@ -14,24 +14,30 @@
     </UserControl.Resources>
 
     <Grid  x:Name="gridGlobal" DataContext="{StaticResource view_zestawienie_na_czynnosciViewSource}">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="1"/>
+                <GradientStop Color="White"/>
+            </LinearGradientBrush>
+        </Grid.Background>
 
         <DataGrid x:Name="view_zestawienie_na_czynnosciDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" Margin="33,140,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False">
             <DataGrid.Columns>
-                
-               
+
+
                 <DataGridTextColumn x:Name="numerColumn" Width="80" Header="numer" Binding="{Binding numer}"/>
                 <DataGridTextColumn x:Name="czynnoscColumn" Width="100" Header="Czynnosc" Binding="{Binding Czynnosc}"/>
-                 <DataGridTextColumn x:Name="suma_godzinColumn" Width="80" IsReadOnly="True" Header="suma godzin" Binding="{Binding suma_godzin}"/>
+                <DataGridTextColumn x:Name="suma_godzinColumn" Width="80" IsReadOnly="True" Header="suma godzin" Binding="{Binding suma_godzin}"/>
                 <DataGridTextColumn x:Name="skrocona_nazwaColumn"  Header="Skrocona nazwa" Binding="{Binding Skrocona_nazwa}" Visibility="Hidden"/>
                 <DataGridTextColumn x:Name="pelna_nazwaColumn" Width="SizeToHeader" Header="Pelna nazwa" Binding="{Binding Pelna_nazwa}" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="koordynatorColumn" Width="SizeToHeader" Header="Koordynator" Binding="{Binding Koordynator}" Visibility="Hidden" />
                 <DataGridTextColumn x:Name="klientColumn" Width="100" Header="Klient" Binding="{Binding Klient}"/>
                 <DataGridTextColumn x:Name="operatorColumn" Width="100" Header="Operator" Binding="{Binding Operator}"/>
-                
+
                 <DataGridTextColumn x:Name="statusColumn" Width="100" Header="Status" Binding="{Binding Status}"/>
                 <DataGridTextColumn x:Name="aktywnyColumn" Width="100" Header="Aktywny" Binding="{Binding Aktywny}"/>
-                
-                
+
+
             </DataGrid.Columns>
         </DataGrid>
         <Grid x:Name="grid2"  HorizontalAlignment="Left" Margin="12,48,0,0" VerticalAlignment="Top" Height="70" Width="323" >
@@ -44,16 +50,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Skrocona nazwa:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4,0,4" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-            <ComboBox x:Name="skrocona_nazwaComboBox" Grid.Column="2" DisplayMemberPath="Skrocona_nazwa" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3,6,-80,6" Grid.Row="0" VerticalAlignment="Center" Width="205"
-                SelectionChanged="numer_wewComboBox_selectionchanged" IsEditable="True">
-            </ComboBox>
 
-            <Label Content="numer wew:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,4,0,3" Grid.Row="1" VerticalAlignment="Center"/>
-            <ComboBox x:Name="numer_wewComboBox" Grid.Column="2" DisplayMemberPath="numer" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3,6,0,5" Grid.Row="1" VerticalAlignment="Center" Width="120"
+            <Label Content="numer wew:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,0,0,3" Grid.Row="0" VerticalAlignment="Bottom"/>
+            <Label  x:Name="ilerokordow" Content="0" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"/>
+
+            <ComboBox x:Name="numer_wewComboBox" Grid.Column="2" DisplayMemberPath="numer" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3,6,0,5" Grid.Row="0" VerticalAlignment="Center" Width="120"
                       SelectionChanged="numer_wewComboBox_selectionchanged" IsEditable="True">
             </ComboBox>
-
+            <Label Content="znalezionych rekordów" Grid.Column="2" HorizontalAlignment="Left" Margin="3,0,0,3" Grid.Row="1" VerticalAlignment="Bottom"/>
         </Grid>
 
         <CheckBox x:Name="checkBox" Content="Z podziałem na zadania" HorizontalAlignment="Left" Margin="368,106,0,0" VerticalAlignment="Top" 

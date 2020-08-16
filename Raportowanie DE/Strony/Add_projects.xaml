@@ -27,14 +27,14 @@
 
         </Grid>
 
-        <StackPanel Margin="0,0,0,36">
-            <Label Content="Dodawanie pojedyncze"/>
-            <StackPanel Orientation="Horizontal">
+        <StackPanel Margin="0,0,0,36" Background="White">
+            <Label Content="Dodawanie pojedyncze" Background="White"/>
+            <StackPanel Orientation="Horizontal" Background="White">
                 <Label Content="Numer:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
                 <TextBox x:Name="textboxnumer" Width="120" Margin="20,3,3,3" />
 
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Background="White">
                 <Label Content="Klient:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
                 <ComboBox x:Name="klientComboBox" Grid.Column="1" DisplayMemberPath="Klient" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding Klient}" Margin="25,3,3,3" Grid.Row="0" VerticalAlignment="Center" Width="120">
                     <ComboBox.ItemsPanel>
@@ -44,7 +44,7 @@
                     </ComboBox.ItemsPanel>
                 </ComboBox>
             </StackPanel>
-            <StackPanel Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" Background="White">
                 <Label Content="Operator:" Grid.Column="0" HorizontalAlignment="Left" Margin="20,3,3,3" Grid.Row="0" VerticalAlignment="Center"/>
                 <ComboBox x:Name="operatorComboBox" Grid.Column="1" DisplayMemberPath="Operator" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding Operator}" Margin="7,3,3,3" Grid.Row="0" VerticalAlignment="Center" Width="120">
                     <ComboBox.ItemsPanel>
@@ -56,23 +56,35 @@
 
 
             </StackPanel>
-            <Button x:Name="buttondodajpojedynczy" Content="Dodaj 1 projekt"   HorizontalAlignment="Left" Margin="100,3,3,3" VerticalAlignment="Top" Width="100" Click="buttondodajpojedynczy_Click" >
+            <Button x:Name="buttondodajpojedynczy" Content="Dodaj do listy"   HorizontalAlignment="Left" Margin="100,3,3,3" VerticalAlignment="Top" Width="100" Click="buttondodajpojedynczy_Click" 
+                    ToolTip="Dodaj pojedynczy projekt do listy oczekującej na wgranie do bazy">
                 <Button.Effect>
                     <DropShadowEffect/>
                 </Button.Effect >
             </Button>
+            <Separator />
         </StackPanel>
 
 
 
 
 
-        <Grid x:Name="Gridglowny" DataContext="{Binding lista1, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" >
-            <Label Content="Pole do wklejenia listy z Excela" Margin="20,155,803,623"/>
-            <TextBox x:Name="textBoxDane" HorizontalAlignment="Left" Height="378" Margin="10,182,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="301"
-                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible"        />
+        <Grid x:Name="Gridglowny" DataContext="{Binding lista1, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" Margin="0,159,0,0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="134*"/>
+                <ColumnDefinition Width="867*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="1"/>
+                    <GradientStop Color="White"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <Label Content="Pole do wklejenia listy z Excela" Margin="57,11,766,601" Grid.ColumnSpan="2"/>
+            <TextBox x:Name="textBoxDane" HorizontalAlignment="Left" Height="378" Margin="10,40,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="301"
+                 AcceptsReturn="True" VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="2"     ToolTip="Wklej z exela lub wpisz dane. Dane w wierszach oddziel spacjami"   />
 
-            <DataGrid x:Name="lista_projektowDataGrid" VerticalScrollBarVisibility="Visible"   RowDetailsVisibilityMode="VisibleWhenSelected" Margin="460,182,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionUnit="Cell" CanUserResizeRows="False">
+            <DataGrid x:Name="lista_projektowDataGrid" VerticalScrollBarVisibility="Visible"   RowDetailsVisibilityMode="VisibleWhenSelected" Margin="350,92,0,0" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" HorizontalAlignment="Left" VerticalAlignment="Top" SelectionUnit="Cell" CanUserResizeRows="False" Grid.Column="1">
                 <DataGrid.Columns>
                     <DataGridTextColumn x:Name="numerColumn" Width="120" Header="numer" Binding="{Binding numer}" />
                     <DataGridTextColumn x:Name="klientColumn" Width="120" Header="Klient" Binding="{Binding Klient}"/>
@@ -83,15 +95,22 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="butzmiana" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="338,316,0,0" VerticalAlignment="Top" Width="51" Height="34" Click="butzmiana_Click"/>
-            <Grid HorizontalAlignment="Left" Height="40" Margin="491,124,0,0" VerticalAlignment="Top" Width="492">
-                <DockPanel Margin="0,0,0,0" >
+            <Button x:Name="butzmiana" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="204.5,116,0,0" VerticalAlignment="Top" Width="51" Height="34" Click="butzmiana_Click" Grid.Column="1"
+                    ToolTip="Przycisk to transformacji danych tekstowych na listę gotową do wrania do bazy danych"/>
 
-                    <Label x:Name="labelIlerekordow" Content="0:rekordow" VerticalAlignment="Center" RenderTransformOrigin="0.993,5.519" />
-                    <Button x:Name="butZapiszdobazy" Content="Zapisz do bazy" HorizontalAlignment="Left" VerticalAlignment="Center" Width="89" Click="butZapiszdobazy_Click" Margin="10,0,0,0"/>
+            <Grid HorizontalAlignment="Left" Height="63" Margin="358,24,0,0" VerticalAlignment="Top" Width="492" Grid.Column="1">
+                <StackPanel >
+                    <Label Content="Pole przygotowanych danych do dodania do bazy. " />
+                    <StackPanel Orientation="Horizontal">
+                        <Label x:Name="labelIlerekordow" Content="0:rekordow" VerticalAlignment="Center" RenderTransformOrigin="0.993,5.519" />
 
-                </DockPanel>
-
+                        <Button x:Name="butZapiszdobazy" Content="Zapisz do bazy" HorizontalAlignment="Left" VerticalAlignment="Center" Width="89" Click="butZapiszdobazy_Click" Margin="10,0,0,0" ToolTip="Przycisk zapisuje dane z listy do bazy.">
+                            <Button.Effect>
+                                <DropShadowEffect/>
+                            </Button.Effect >
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
 
             </Grid>
         </Grid>

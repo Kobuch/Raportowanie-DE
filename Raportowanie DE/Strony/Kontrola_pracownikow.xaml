@@ -28,20 +28,20 @@
 
         <Button x:Name="PrevWeek" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="241,141,0,0" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.475,0.518" Click="PrevWeek_Click"/>
         <Button x:Name="nextWeek" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="358,141,0,0" VerticalAlignment="Top" Width="32" Click="nextWeek_Click"/>
-        <Button x:Name="buttonExcel" Content="Export do Excela" HorizontalAlignment="Left" Margin="560,200,0,0" VerticalAlignment="Top" Width="97" Click="DoExcela_click"/>
+        <Button x:Name="buttonExcel" IsEnabled="False" Content="Export do Excela" HorizontalAlignment="Left" Margin="560,200,0,0" VerticalAlignment="Top" Width="97" Click="DoExcela_click"/>
 
-        <TextBox x:Name="textBoxWeek" HorizontalAlignment="Left" Height="23" Margin="288,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.678,0.141" IsReadOnlyCaretVisible="True"/>
+        <TextBox x:Name="textBoxWeek" HorizontalAlignment="Left" Height="23" Margin="288,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="49" RenderTransformOrigin="0.678,0.141" IsReadOnly="True" />
         <Label x:Name="labelRok" Content="Rok" HorizontalAlignment="Left" Margin="288,73,0,0" VerticalAlignment="Top" FontWeight="Bold" Background="#00000000" Foreground="#FFFBF7F7"/>
         <Label x:Name="label" Content="week:" HorizontalAlignment="Left" Margin="288,113,0,0" VerticalAlignment="Top" Foreground="#FFFBF7F7"/>
         <ComboBox x:Name="comboBoxAktyw"  Text="Oba zespoły" SelectionChanged="comboBoxAktyw_SelectionChanged"    HorizontalAlignment="Left" Margin="402,77,0,0" VerticalAlignment="Top" Width="120" >
             <ComboBoxItem Content= "Zespół1"/>
             <ComboBoxItem Content= "Zespół2"/>
             <ComboBoxItem Content= "Oba zespoły"/>
-            <ComboBoxItem Content= "Wsparcie"/>
+            <!--<ComboBoxItem Content= "Wsparcie"/>
             <ComboBoxItem Content= "Menagerowie"/>
-            <ComboBoxItem Content= "Wszyscy w DE"/>
+            <ComboBoxItem Content= "Wszyscy w DE"/>-->
         </ComboBox>
-        <Button x:Name="button_Mail" Content="Generuj maila" Height="20" Margin="425,164,0,0" VerticalAlignment="Top" Click="button_Mail_Click" HorizontalAlignment="Left" Width="97"/>
+        <Button x:Name="button_Mail" IsEnabled="False"  Content="Generuj maila" Height="20" Margin="425,164,0,0" VerticalAlignment="Top" Click="button_Mail_Click" HorizontalAlignment="Left" Width="97"/>
 
         <DataGrid x:Name="zestawieniedataGrid" AutoGenerateColumns="False"  HorizontalAlignment="Left" Margin="10,194,0,0" VerticalAlignment="Top" ItemsSource="{Binding}" CanUserAddRows="False" CanUserDeleteRows="False" SelectionMode="Single" SelectionUnit="CellOrRowHeader" RowHeaderWidth="20" MouseDoubleClick="zestawieniedataGrid_MouseDoubleClick">
             <DataGrid.Columns>

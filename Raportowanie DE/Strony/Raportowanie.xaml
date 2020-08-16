@@ -85,9 +85,7 @@
                 <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding Czynnosc}" Header="Czynnosc" Width="100" IsReadOnly="True"/>
                 <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" Width="100" IsReadOnly="True"/>
                 <DataGridTextColumn x:Name="OperatorColumn" Binding="{Binding Rezerwa2}" Header="Operator" Width="100" IsReadOnly="True"/>
-                <DataGridTextColumn x:Name="pONColumn" Binding="{Binding PON}" Header="PON" Width="40" >
-                    
-
+                <DataGridTextColumn x:Name="pONColumn" Binding="{Binding PON}" Header="PON" Width="40"  >
                 </DataGridTextColumn>
 
 

@@ -66,7 +66,7 @@ namespace Raportowanie_DE.Strony
         
             this.logowaniehaslem = true;
             this.osoba = osoba1;
-            this.uprawnienie = "Admin";
+            this.uprawnienie = "pracownik";
             baza= new Baza();
                         
             
@@ -88,18 +88,27 @@ namespace Raportowanie_DE.Strony
             zestawy_godzinDataGrid.ItemsSource = jPP_DEDataSet.Zestawy_godzin;
 
             gridczynnosci.DataContext = jPP_DEDataSet.Lista_czynnosci;
-           // odswierzaj();
+            odswierzaj();
             
         }
 
         #endregion
-
+    
 
         #region Metody
+
+       private void UserControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            odswierzaj();
+
+        }
+
+
         private void odswierzaj()
         //odświerza wszystkie wymagane kontrolki na ekranie(kalendarz, week, gridy, godziny)
         {
             textBoxWeek.Text = baza.WeekNumber.ToString();
+            baza.ZmianaWeek(0);
             calendar1.DisplayDate=baza.dataweekStart;
             calendar1.SelectedDates.AddRange(baza.dataweekStart, baza.dataweekEnd);
             
@@ -444,17 +453,7 @@ namespace Raportowanie_DE.Strony
 
         #endregion
 
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-            odswierzaj();
-            // Nie ładuj danych w czasie projektowania.
-            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            // {
-            // 	//Tu załaduj swoje dane i przypisz wynik do CollectionViewSource.
-            // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
-            // 	myCollectionViewSource.Source = your data
-            // }
-        }
+      
 
       
     }

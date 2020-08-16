@@ -35,8 +35,8 @@ namespace Raportowanie_DE.Strony
         {
             InitializeComponent();
 
-            view_Zestawienie_Na_ProjektyTableAdapter.Fill(jPP_DEDataSet.View_Zestawienie_na_projekty);
-            view_Zestawienie_Na_CzynnosciTableAdapter.Fill(jPP_DEDataSet.View_zestawienie_na_czynnosci);
+          //  view_Zestawienie_Na_ProjektyTableAdapter.Fill(jPP_DEDataSet.View_Zestawienie_na_projekty);
+          //  view_Zestawienie_Na_CzynnosciTableAdapter.Fill(jPP_DEDataSet.View_zestawienie_na_czynnosci);
             lista_ProjektowTableAdapter.Fill(jPP_DEDataSet.Lista_projektow);
 
             gridGlobal.DataContext = jPP_DEDataSet.View_zestawienie_na_czynnosci;
@@ -62,6 +62,16 @@ namespace Raportowanie_DE.Strony
 
                 view_Zestawienie_Na_CzynnosciTableAdapter.FillBy_by_nr_wew(jPP_DEDataSet.View_zestawienie_na_czynnosci, nr_wew);
                 view_Zestawienie_Na_ProjektyTableAdapter.FillBy_by_nr_wew(jPP_DEDataSet.View_Zestawienie_na_projekty, nr_wew);
+
+                
+                ilerokordow.Content = view_zestawienie_na_czynnosciDataGrid.Items.Count;
+
+
+            }
+            else
+            {
+              //  view_Zestawienie_Na_CzynnosciTableAdapter.Fill(jPP_DEDataSet.View_zestawienie_na_czynnosci);
+              //  view_Zestawienie_Na_ProjektyTableAdapter.Fill(jPP_DEDataSet.View_Zestawienie_na_projekty);
             }
         }
 
@@ -71,11 +81,13 @@ namespace Raportowanie_DE.Strony
             if (wybor.IsChecked == true)
             {
                 gridGlobal.DataContext = jPP_DEDataSet.View_zestawienie_na_czynnosci;
+                ilerokordow.Content = view_zestawienie_na_czynnosciDataGrid.Items.Count;
 
             }
             else
             {
                 gridGlobal.DataContext = jPP_DEDataSet.View_Zestawienie_na_projekty;
+                ilerokordow.Content = view_zestawienie_na_czynnosciDataGrid.Items.Count;
             }
         }
     }

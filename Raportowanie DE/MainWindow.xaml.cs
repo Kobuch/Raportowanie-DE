@@ -43,7 +43,7 @@ namespace Raportowanie_DE
         {
 
             InitializeComponent();
-           // raportowanie.osoba = Osoba1;
+           
             this.osoba1 = Osoba1;
             raportowanie = new Raportowanie(osoba1);
             ContentControl_JPP.Content = raportowanie;
@@ -58,19 +58,29 @@ namespace Raportowanie_DE
             if(uprawnienie== "koordynator")
             {
                 button2.IsEnabled = true;
+                button2.Visibility = Visibility.Visible;
                 button3.IsEnabled = true;
+                button3.Visibility = Visibility.Visible;
                 button4.IsEnabled = true;
+                button4.Visibility = Visibility.Visible;
                 button5.IsEnabled = true;
+                button5.Visibility = Visibility.Visible;
                 button6.IsEnabled = true;
+                button6.Visibility = Visibility.Visible;
             }
 
             if (uprawnienie == "kierownik")
             {
                 button2.IsEnabled = true;
+                button2.Visibility = Visibility.Visible;
                 button3.IsEnabled = true;
+                button3.Visibility = Visibility.Visible;
                 button4.IsEnabled = true;
+                button4.Visibility = Visibility.Visible;
                 button5.IsEnabled = true;
+                button5.Visibility = Visibility.Visible;
                 button6.IsEnabled = true;
+                button6.Visibility = Visibility.Visible;
             }
 
         }
@@ -112,13 +122,13 @@ namespace Raportowanie_DE
         private void Polecenie5_Click(object sender, RoutedEventArgs e)
         {
             ContentControl_JPP.Content = zestawienie1;
-            labelglowny.Content = "Zestawienie godzin";
+            labelglowny.Content = "Raport 1. Zestawienie godzin";
         }
 
         private void Polecenie6_Click(object sender, RoutedEventArgs e)
         {
             ContentControl_JPP.Content = raportgodzin1;
-            labelglowny.Content = "Raport 1";
+            labelglowny.Content = "Raport 2. Zestawienie godzin";
         }
     }
 }

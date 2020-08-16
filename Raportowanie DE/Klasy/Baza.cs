@@ -12,6 +12,8 @@ using System.Windows;
 using System.Reflection;
 using System.Collections.ObjectModel;
 using Raportowanie_DE.JPP_DEDataSetTableAdapters;
+using System.Data;
+using System.Windows.Controls;
 
 namespace Raportowanie_DE.Klasy
 {
@@ -222,6 +224,45 @@ namespace Raportowanie_DE.Klasy
             return slowo;
         }
 
+        public void K_O_W_R_P_CDataTabletonewexcel(JPP_DEDataSet.View_Zest2_sumagodzin_K_O_W_R_P_CDataTable table)
+        {
+            OpenNewExcel();
+
+               for (int i = 1; i < table.Columns.Count + 1; i++)
+                    {
+                      m_objSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+                      
+            }
+
+                    for (int j = 0; j < table.Rows.Count; j++)
+                    {
+                        for (int k = 0; k < table.Columns.Count; k++)
+                        {
+                    m_objSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+                        }
+                    }
+
+        }
+
+        public void K_O_W_RCDataTabletonewexcel(JPP_DEDataSet.View_Zest1_sumagodzin_K_O_W_RDataTable table)
+        {
+            OpenNewExcel();
+
+            for (int i = 1; i < table.Columns.Count + 1; i++)
+            {
+                m_objSheet.Cells[1, i] = table.Columns[i - 1].ColumnName;
+
+            }
+
+            for (int j = 0; j < table.Rows.Count; j++)
+            {
+                for (int k = 0; k < table.Columns.Count; k++)
+                {
+                    m_objSheet.Cells[j + 2, k + 1] = table.Rows[j].ItemArray[k].ToString();
+                }
+            }
+
+        }
 
 
     }
