@@ -36,7 +36,9 @@ namespace Raportowanie_DE
         Zestawienie1 zestawienie1 = new Zestawienie1();
         Raport1 raportgodzin1 = new Raport1();
         Raport2 raportbyosoby = new Raport2();
-        
+        Admin1 raportadmin1 = new Admin1();
+
+
         private string uprawnienie;
 
 
@@ -145,7 +147,8 @@ namespace Raportowanie_DE
 
         private void PolecenieAdmin1_Click(object sender, RoutedEventArgs e)
         {
-
+            ContentControl_JPP.Content = raportadmin1;
+            labelglowny.Content = "Raport Admin1. Edycja rekordów";
         }
     }
 }

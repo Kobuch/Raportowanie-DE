@@ -1,12 +1,58 @@
-﻿<UserControl x:Class="Raportowanie_DE.Strony.Admin1"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Raportowanie_DE.Strony"
+             xmlns:Raportowanie_DE="clr-namespace:Raportowanie_DE" x:Class="Raportowanie_DE.Strony.Admin1"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000" >
+             d:DesignHeight="800" d:DesignWidth="1000" Loaded="UserControl_Loaded" >
+    <UserControl.Resources>
+        <Raportowanie_DE:JPP_DEDataSet x:Key="jPP_DEDataSet"/>
+        <CollectionViewSource x:Key="zestawy_godzinViewSource" Source="{Binding Zestawy_godzin, Source={StaticResource jPP_DEDataSet}}"/>
+    </UserControl.Resources>
     <Grid>
-            
+        <Button x:Name="button" Content="Zapisz" Width="150" Height="25" Click="button_Click" Margin="397,33,453,742"/>
+
+        <StackPanel DataContext="{StaticResource zestawy_godzinViewSource}">
+            <DataGrid x:Name="zestawy_godzinDataGrid"   AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="20,80,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalScrollBarVisibility="Visible" CanUserAddRows="False" CanUserResizeRows="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="948" Height="687">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Edycja">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Click="butedutuj_click" Content="Edytuj" Margin="2"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn x:Name="projekt_IDColumn" Binding="{Binding Projekt_ID}" Header="Projekt ID" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="projektColumn" Binding="{Binding Projekt}" Header="Projekt" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="czynnoscColumn" Binding="{Binding Czynnosc}" Header="Czynnosc" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="osobaColumn" Binding="{Binding Osoba}" Header="Osoba" Width="SizeToHeader"/>
+                    <DataGridTemplateColumn x:Name="data1Column" Header="Data 1" Width="SizeToHeader">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <DatePicker SelectedDate="{Binding Data1, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn x:Name="rOKColumn" Binding="{Binding ROK}" Header="ROK" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="wEEKColumn" Binding="{Binding WEEK}" Header="WEEK" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="pONColumn" Binding="{Binding PON}" Header="PON" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="wTOColumn" Binding="{Binding WTO}" Header="WTO" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="sROColumn" Binding="{Binding SRO}" Header="SRO" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="cZWColumn" Binding="{Binding CZW}" Header="CZW" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="sOBColumn" Binding="{Binding SOB}" Header="SOB" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="nIEDColumn" Binding="{Binding NIED}" Header="NIED" Width="SizeToHeader"/>
+                    <DataGridCheckBoxColumn x:Name="mozna_usuwacColumn" Binding="{Binding Mozna_usuwac}" Header="Mozna usuwac" Width="SizeToHeader"/>
+                    <DataGridCheckBoxColumn x:Name="mozna_edytowacColumn" Binding="{Binding Mozna_edytowac}" Header="Mozna edytowac" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="numerColumn" Binding="{Binding Numer}" Header="Numer" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="rezerwa2Column" Binding="{Binding Rezerwa2}" Header="Rezerwa 2" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="pIAColumn" Binding="{Binding PIA}" Header="PIA" Width="SizeToHeader"/>
+                    <DataGridTextColumn x:Name="iD_Zestawy_godzColumn" Binding="{Binding ID_Zestawy_godz}" Header="ID Zestawy godz" IsReadOnly="True" Width="SizeToHeader"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </StackPanel>
     </Grid>
 </UserControl>
