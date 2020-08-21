@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" GeneratorFunctionsComponentClassName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" UserFunctionsComponentName="QueriesTableAdapter" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection ConnectionStringObject="Data Source=serwer2019;Initial Catalog=JPP_DE;User ID=JPP_pracownicy;Password=JPP_pracownicy2020" IsAppSettingsProperty="false" Modifier="Assembly" Name="serwer2019\sqlexpress.JPP_DE.dbo" ParameterPrefix="@" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="JPP_DEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="JPP_DEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Raportowanie_DE.Properties.Settings.GlobalReference.Default.JPP_DEConnectionString" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Lista_czynnosciTableAdapter" GeneratorDataComponentClassName="Lista_czynnosciTableAdapter" Name="Lista_czynnosci" UserDataComponentName="Lista_czynnosciTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_czynnosci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_czynnosci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Lista_czynnosci] WHERE (([Id_lista_czynn] = @Original_Id_lista_czynn) AND ((@IsNull_czynnosc = 1 AND [czynnosc] IS NULL) OR ([czynnosc] = @Original_czynnosc)) AND ((@IsNull_Rynek = 1 AND [Rynek] IS NULL) OR ([Rynek] = @Original_Rynek)))</CommandText>
@@ -62,7 +62,7 @@ SELECT Id_lista_czynn, czynnosc, Rynek FROM Lista_czynnosci WHERE (Id_lista_czyn
               <Mapping SourceColumn="Rynek" DataSetColumn="Rynek" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_czynnosci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Rynek" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_Rynek" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_Rynek">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_czynnosci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Rynek" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_Rynek" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_Rynek">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Id_lista_czynn, Rynek, czynnosc
@@ -78,7 +78,7 @@ WHERE        (Rynek = @rynek)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Lista_projektowTableAdapter" GeneratorDataComponentClassName="Lista_projektowTableAdapter" Name="Lista_projektow" UserDataComponentName="Lista_projektowTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [Lista_projektow] WHERE (([ID_lista_proj] = @Original_ID_lista_proj) AND ((@IsNull_numer = 1 AND [numer] IS NULL) OR ([numer] = @Original_numer)) AND ((@IsNull_Skrocona_nazwa = 1 AND [Skrocona_nazwa] IS NULL) OR ([Skrocona_nazwa] = @Original_Skrocona_nazwa)) AND ((@IsNull_Pelna_nazwa = 1 AND [Pelna_nazwa] IS NULL) OR ([Pelna_nazwa] = @Original_Pelna_nazwa)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)) AND ((@IsNull_Koordynator = 1 AND [Koordynator] IS NULL) OR ([Koordynator] = @Original_Koordynator)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)) AND ([Mozna_usuwac] = @Original_Mozna_usuwac))</CommandText>
@@ -180,7 +180,7 @@ SELECT ID_lista_proj, numer, Skrocona_nazwa, Pelna_nazwa, Klient, Operator, Koor
               <Mapping SourceColumn="Mozna_usuwac" DataSetColumn="Mozna_usuwac" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Aktywne" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_Aktywne" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_Aktywne">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Aktywne" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_Aktywne" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_Aktywne">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator, Pelna_nazwa, Skrocona_nazwa, Status, numer
@@ -193,7 +193,7 @@ ORDER BY numer</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Aktywny_operator" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy_Aktywny_operator" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy_Aktywny_operator">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Aktywny_operator" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy_Aktywny_operator" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy_Aktywny_operator">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator, Pelna_nazwa, Skrocona_nazwa, Status, numer FROM Lista_projektow WHERE (Aktywny = @_Aktywne) AND (Operator = @_Operator)</CommandText>
@@ -204,7 +204,7 @@ ORDER BY numer</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_by_numer_aktywny" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy_by_numer_aktywny" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy_by_numer_aktywny">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Lista_projektow" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_by_numer_aktywny" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy_by_numer_aktywny" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy_by_numer_aktywny">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT Aktywny, ID_lista_proj, Klient, Koordynator, Mozna_usuwac, Operator, Pelna_nazwa, Skrocona_nazwa, Status, numer FROM Lista_projektow WHERE (numer LIKE N'%' + @numer + N'%') AND (Aktywny = @Aktywny)</CommandText>
@@ -219,7 +219,7 @@ ORDER BY numer</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="LoginTableAdapter" GeneratorDataComponentClassName="LoginTableAdapter" Name="Login" UserDataComponentName="LoginTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Login] WHERE (([ID_tab_pracownicy] = @Original_ID_tab_pracownicy) AND ((@IsNull_Imie = 1 AND [Imie] IS NULL) OR ([Imie] = @Original_Imie)) AND ((@IsNull_Nazwisko = 1 AND [Nazwisko] IS NULL) OR ([Nazwisko] = @Original_Nazwisko)) AND ((@IsNull_Login = 1 AND [Login] IS NULL) OR ([Login] = @Original_Login)) AND ((@IsNull_Nr_Pracownika = 1 AND [Nr_Pracownika] IS NULL) OR ([Nr_Pracownika] = @Original_Nr_Pracownika)) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)) AND ((@IsNull_Haslo = 1 AND [Haslo] IS NULL) OR ([Haslo] = @Original_Haslo)) AND ((@IsNull_Aktywnosc = 1 AND [Aktywnosc] IS NULL) OR ([Aktywnosc] = @Original_Aktywnosc)) AND ((@IsNull_Typ_prcownika = 1 AND [Typ_prcownika] IS NULL) OR ([Typ_prcownika] = @Original_Typ_prcownika)))</CommandText>
@@ -314,7 +314,7 @@ SELECT ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, A
               <Mapping SourceColumn="Typ_prcownika" DataSetColumn="Typ_prcownika" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_bylogin" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_bylogin" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_bylogin">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_bylogin" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_bylogin" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_bylogin">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, Aktywnosc, Typ_prcownika
@@ -326,7 +326,7 @@ WHERE        (Login = @_Login)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Stat_Akt_Typ" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy_Stat_Akt_Typ" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy_Stat_Akt_Typ">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Stat_Akt_Typ" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy_Stat_Akt_Typ" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy_Stat_Akt_Typ">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, Aktywnosc, Typ_prcownika
@@ -340,7 +340,7 @@ WHERE        (Aktywnosc = @_aktywnosc) AND (Typ_prcownika = @typ) AND (Status = 
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Typ_Stat_zespol" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy_Typ_Stat_zespol" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy_Typ_Stat_zespol">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_Typ_Stat_zespol" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="FillBy_Typ_Stat_zespol" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="FillBy_Typ_Stat_zespol">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        ID_tab_pracownicy, Imie, Nazwisko, Login, Nr_Pracownika, Status, Haslo, Aktywnosc, Typ_prcownika
@@ -358,7 +358,7 @@ WHERE        (Status = @status) AND (Zespol LIKE @Zespool) AND (Typ_prcownika = 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_zestaw_raporty_po_osobachTableAdapter" GeneratorDataComponentClassName="View_zestaw_raporty_po_osobachTableAdapter" Name="View_zestaw_raporty_po_osobach" UserDataComponentName="View_zestaw_raporty_po_osobachTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_zestaw_raporty_po_osobach" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_zestaw_raporty_po_osobach" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT wynik, Typ_prcownika, WEEK, Login FROM dbo.View_zestaw_raporty_po_osobach</CommandText>
@@ -377,7 +377,7 @@ WHERE        (Status = @status) AND (Zespol LIKE @Zespool) AND (Typ_prcownika = 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_zestawienie_na czynnosciTableAdapter" GeneratorDataComponentClassName="View_zestawienie_na_czynnosciTableAdapter" Name="View_zestawienie_na czynnosci" UserDataComponentName="View_zestawienie_na czynnosciTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.[View_zestawienie_na czynnosci]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.[View_zestawienie_na czynnosci]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT suma_godzin, numer, Czynnosc, Skrocona_nazwa, Pelna_nazwa, Koordynator, Status, Aktywny, Klient, Operator FROM dbo.[View_zestawienie_na czynnosci]</CommandText>
@@ -399,7 +399,7 @@ WHERE        (Status = @status) AND (Zespol LIKE @Zespool) AND (Typ_prcownika = 
               <Mapping SourceColumn="Operator" DataSetColumn="Operator" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.[View_zestawienie_na czynnosci]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_by_nr_wew" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_by_nr_wew" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_by_nr_wew">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.[View_zestawienie_na czynnosci]" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_by_nr_wew" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_by_nr_wew" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_by_nr_wew">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, numer, Czynnosc, Skrocona_nazwa, Pelna_nazwa, Koordynator, Status, Aktywny, Klient, Operator
@@ -415,7 +415,7 @@ WHERE        (numer = @_numer)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Zestawienie_na_projektyTableAdapter" GeneratorDataComponentClassName="View_Zestawienie_na_projektyTableAdapter" Name="View_Zestawienie_na_projekty" UserDataComponentName="View_Zestawienie_na_projektyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zestawienie_na_projekty" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zestawienie_na_projekty" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>SELECT suma_godzin, numer, Skrocona_nazwa, Pelna_nazwa, Koordynator, Status, Aktywny, Klient, Operator FROM dbo.View_Zestawienie_na_projekty</CommandText>
@@ -436,7 +436,7 @@ WHERE        (numer = @_numer)</CommandText>
               <Mapping SourceColumn="Operator" DataSetColumn="Operator" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zestawienie_na_projekty" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_by_nr_wew" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_by_nr_wew" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_by_nr_wew">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zestawienie_na_projekty" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_by_nr_wew" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_by_nr_wew" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_by_nr_wew">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, numer, Skrocona_nazwa, Pelna_nazwa, Koordynator, Status, Aktywny, Klient, Operator
@@ -452,7 +452,7 @@ WHERE        (numer = @_numer)</CommandText>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Zestawy_godzinTableAdapter" GeneratorDataComponentClassName="Zestawy_godzinTableAdapter" Name="Zestawy_godzin" UserDataComponentName="Zestawy_godzinTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [Zestawy_godzin] WHERE (([ID_Zestawy_godz] = @Original_ID_Zestawy_godz) AND ((@IsNull_Projekt_ID = 1 AND [Projekt_ID] IS NULL) OR ([Projekt_ID] = @Original_Projekt_ID)) AND ((@IsNull_Projekt = 1 AND [Projekt] IS NULL) OR ([Projekt] = @Original_Projekt)) AND ((@IsNull_Czynnosc = 1 AND [Czynnosc] IS NULL) OR ([Czynnosc] = @Original_Czynnosc)) AND ((@IsNull_Klient = 1 AND [Klient] IS NULL) OR ([Klient] = @Original_Klient)) AND ((@IsNull_Osoba = 1 AND [Osoba] IS NULL) OR ([Osoba] = @Original_Osoba)) AND ((@IsNull_Data1 = 1 AND [Data1] IS NULL) OR ([Data1] = @Original_Data1)) AND ((@IsNull_ROK = 1 AND [ROK] IS NULL) OR ([ROK] = @Original_ROK)) AND ((@IsNull_WEEK = 1 AND [WEEK] IS NULL) OR ([WEEK] = @Original_WEEK)) AND ((@IsNull_PON = 1 AND [PON] IS NULL) OR ([PON] = @Original_PON)) AND ((@IsNull_WTO = 1 AND [WTO] IS NULL) OR ([WTO] = @Original_WTO)) AND ((@IsNull_SRO = 1 AND [SRO] IS NULL) OR ([SRO] = @Original_SRO)) AND ((@IsNull_CZW = 1 AND [CZW] IS NULL) OR ([CZW] = @Original_CZW)) AND ((@IsNull_PIA = 1 AND [PIA] IS NULL) OR ([PIA] = @Original_PIA)) AND ((@IsNull_SOB = 1 AND [SOB] IS NULL) OR ([SOB] = @Original_SOB)) AND ((@IsNull_NIED = 1 AND [NIED] IS NULL) OR ([NIED] = @Original_NIED)) AND ((@IsNull_Mozna_usuwac = 1 AND [Mozna_usuwac] IS NULL) OR ([Mozna_usuwac] = @Original_Mozna_usuwac)) AND ((@IsNull_Mozna_edytowac = 1 AND [Mozna_edytowac] IS NULL) OR ([Mozna_edytowac] = @Original_Mozna_edytowac)) AND ((@IsNull_Numer = 1 AND [Numer] IS NULL) OR ([Numer] = @Original_Numer)) AND ((@IsNull_Rezerwa2 = 1 AND [Rezerwa2] IS NULL) OR ([Rezerwa2] = @Original_Rezerwa2)))</CommandText>
@@ -625,7 +625,7 @@ SELECT ID_Zestawy_godz, Projekt_ID, Projekt, Czynnosc, Klient, Osoba, Data1, ROK
               <Mapping SourceColumn="ID_Zestawy_godz" DataSetColumn="ID_Zestawy_godz" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_oso_week_rok" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_oso_week_rok" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_oso_week_rok">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy_oso_week_rok" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_oso_week_rok" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_oso_week_rok">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CZW, Czynnosc, Data1, Klient, ID_Zestawy_godz, Mozna_edytowac, Mozna_usuwac, NIED, Osoba, PIA, PON, Projekt, Projekt_ID, ROK, Numer, Rezerwa2, SOB, SRO, WEEK, WTO
@@ -639,7 +639,7 @@ WHERE        (WEEK = @week) AND (Osoba = @osoba) AND (ROK = @rok) AND (Projekt &
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByJPP" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByJPP" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByJPP">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByJPP" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByJPP" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByJPP">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        CZW, Czynnosc, Data1, Klient, ID_Zestawy_godz, Mozna_edytowac, Mozna_usuwac, NIED, Osoba, PIA, PON, Projekt, Projekt_ID, ROK, Numer, Rezerwa2, SOB, SRO, WEEK, WTO
@@ -657,7 +657,7 @@ WHERE        (WEEK = @week) AND (Osoba = @osoba) AND (ROK = @rok) AND (Projekt =
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="slownik_AktywnyTableAdapter" GeneratorDataComponentClassName="slownik_AktywnyTableAdapter" Name="slownik_Aktywny" UserDataComponentName="slownik_AktywnyTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.slownik_Aktywny" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.slownik_Aktywny" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[slownik_Aktywny] WHERE (([ID_Aktywny] = @Original_ID_Aktywny) AND ((@IsNull_Aktywny = 1 AND [Aktywny] IS NULL) OR ([Aktywny] = @Original_Aktywny)))</CommandText>
@@ -706,7 +706,7 @@ SELECT ID_Aktywny, Aktywny FROM slownik_Aktywny WHERE (ID_Aktywny = @ID_Aktywny)
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Slownik_klienciTableAdapter" GeneratorDataComponentClassName="Slownik_klienciTableAdapter" Name="Slownik_klienci" UserDataComponentName="Slownik_klienciTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Slownik_klienci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Slownik_klienci" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Slownik_klienci] WHERE (([id_klient] = @Original_id_klient) AND ([Klient] = @Original_Klient))</CommandText>
@@ -752,7 +752,7 @@ SELECT id_klient, Klient FROM Slownik_klienci WHERE (Klient = @Klient)</CommandT
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Slownik_operatorTableAdapter" GeneratorDataComponentClassName="Slownik_operatorTableAdapter" Name="Slownik_operator" UserDataComponentName="Slownik_operatorTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Slownik_operator" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Slownik_operator" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Slownik_operator] WHERE (([Id_operator] = @Original_Id_operator) AND ((@IsNull_Operator = 1 AND [Operator] IS NULL) OR ([Operator] = @Original_Operator)))</CommandText>
@@ -801,7 +801,7 @@ SELECT Id_operator, Operator FROM Slownik_operator WHERE (Id_operator = @Id_oper
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="slownik_statusTableAdapter" GeneratorDataComponentClassName="slownik_statusTableAdapter" Name="slownik_status" UserDataComponentName="slownik_statusTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.slownik_status" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.slownik_status" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[slownik_status] WHERE (([ID_status] = @Original_ID_status) AND ((@IsNull_Status = 1 AND [Status] IS NULL) OR ([Status] = @Original_Status)))</CommandText>
@@ -850,7 +850,7 @@ SELECT ID_status, Status FROM slownik_status WHERE (ID_status = @ID_status)</Com
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Zest1_sumagodzin_K_O_W_RTableAdapter" GeneratorDataComponentClassName="View_Zest1_sumagodzin_K_O_W_RTableAdapter" Name="View_Zest1_sumagodzin_K_O_W_R" UserDataComponentName="View_Zest1_sumagodzin_K_O_W_RTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zest1_sumagodzin_K_O_W_R" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest1_sumagodzin_K_O_W_R" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, Klient, Operator, WEEK, ROK
@@ -868,7 +868,7 @@ FROM            View_Zest1_sumagodzin_K_O_W_R</CommandText>
               <Mapping SourceColumn="ROK" DataSetColumn="ROK" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zest1_sumagodzin_K_O_W_R" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_weekstart_i_koniec" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_weekstart_i_koniec" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_weekstart_i_koniec">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest1_sumagodzin_K_O_W_R" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_weekstart_i_koniec" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_weekstart_i_koniec" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_weekstart_i_koniec">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, Klient, Operator, WEEK, ROK
@@ -886,7 +886,7 @@ WHERE        (ROK = @rok) AND (WEEK &gt;= @weekstart) AND (WEEK &lt;= @weekend)<
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Zest2_sumagodzin_K_O_W_R_P_CTableAdapter" GeneratorDataComponentClassName="View_Zest2_sumagodzin_K_O_W_R_P_CTableAdapter" Name="View_Zest2_sumagodzin_K_O_W_R_P_C" UserDataComponentName="View_Zest2_sumagodzin_K_O_W_R_P_CTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zest2_sumagodzin_K_O_W_R_P_C" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest2_sumagodzin_K_O_W_R_P_C" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, Klient, Operator, WEEK, ROK, Projekt, Czynnosc
@@ -906,7 +906,7 @@ FROM            View_Zest2_sumagodzin_K_O_W_R_P_C</CommandText>
               <Mapping SourceColumn="Czynnosc" DataSetColumn="Czynnosc" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_Zest2_sumagodzin_K_O_W_R_P_C" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_rok_weekstart_end" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_rok_weekstart_end" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_rok_weekstart_end">
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest2_sumagodzin_K_O_W_R_P_C" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_rok_weekstart_end" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_rok_weekstart_end" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_rok_weekstart_end">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        suma_godzin, Klient, Operator, WEEK, ROK, Projekt, Czynnosc
@@ -922,9 +922,48 @@ WHERE        (ROK = @rok) AND (WEEK &gt;= @weekstart) AND (WEEK &lt;= @weekend)<
               </DbSource>
             </Sources>
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_Zest3_sumagodzin_Osoba_projTableAdapter" GeneratorDataComponentClassName="View_Zest3_sumagodzin_Osoba_projTableAdapter" Name="View_Zest3_sumagodzin_Osoba_proj" UserDataComponentName="View_Zest3_sumagodzin_Osoba_projTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest3_sumagodzin_Osoba_proj" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        View_Zest3_sumagodzin_Osoba_proj.*
+FROM            View_Zest3_sumagodzin_Osoba_proj</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="suma_godzin" DataSetColumn="suma_godzin" />
+              <Mapping SourceColumn="wynik2" DataSetColumn="wynik2" />
+              <Mapping SourceColumn="Osoba" DataSetColumn="Osoba" />
+              <Mapping SourceColumn="Numer" DataSetColumn="Numer" />
+              <Mapping SourceColumn="Rezerwa2" DataSetColumn="Rezerwa2" />
+              <Mapping SourceColumn="Czynnosc" DataSetColumn="Czynnosc" />
+              <Mapping SourceColumn="Klient" DataSetColumn="Klient" />
+              <Mapping SourceColumn="WEEK" DataSetColumn="WEEK" />
+              <Mapping SourceColumn="ROK" DataSetColumn="ROK" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_Zest3_sumagodzin_Osoba_proj" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillBy_rokweek_start_end" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy_rokweek_start_end" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy_rokweek_start_end">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        suma_godzin, wynik2, Osoba, Numer, Rezerwa2, Czynnosc, Klient, WEEK, ROK
+FROM            View_Zest3_sumagodzin_Osoba_proj
+WHERE        (wynik2 &gt;= @_rokweekstart) AND (wynik2 &lt;= @_rokweekend)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="_rokweekstart" ColumnName="wynik2" DataSourceName="JPP_DE.dbo.View_Zest3_sumagodzin_Osoba_proj" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@_rokweekstart" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="wynik2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="_rokweekend" ColumnName="wynik2" DataSourceName="JPP_DE.dbo.View_Zest3_sumagodzin_Osoba_proj" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@_rokweekend" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="wynik2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
         </Tables>
         <Sources>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Login" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Login" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SQL_Login">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Login" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Login" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="SQL_Login">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT        Status
@@ -936,7 +975,7 @@ WHERE        (Login = @login)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Password_verify" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Password_verify" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SQL_Password_verify">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Login" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Password_verify" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Password_verify" QueryType="Scalar" ScalarCallRetval="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="SQL_Password_verify">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT        Aktywnosc
@@ -949,7 +988,7 @@ WHERE        (Login = @login) AND (Haslo = @password)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.View_zestaw_raporty_po_osobach" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQLSumaGodz_Week_osoba" MethodsParameterType="CLR" Modifier="Public" Name="SQLSumaGodz_Week_osoba" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SQLSumaGodz_Week_osoba">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.View_zestaw_raporty_po_osobach" DbObjectType="View" GenerateShortCommands="true" GeneratorSourceName="SQLSumaGodz_Week_osoba" MethodsParameterType="CLR" Modifier="Public" Name="SQLSumaGodz_Week_osoba" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="SQLSumaGodz_Week_osoba">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT        wynik
@@ -962,7 +1001,7 @@ WHERE        (Login = @osoba) AND (WEEK = @week)</CommandText>
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Skopiowanie_projektow_last_week" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Skopiowanie_projektow_last_week" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SQL_Skopiowanie_projektow_last_week">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Skopiowanie_projektow_last_week" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Skopiowanie_projektow_last_week" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy3" UserSourceName="SQL_Skopiowanie_projektow_last_week">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>INSERT INTO Zestawy_godzin
@@ -980,7 +1019,7 @@ WHERE        (Osoba = @osobaszukana) AND (ROK = @rokszukany) AND (WEEK = @weeksz
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Testzestaw_ma_projekt" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Testzestaw_ma_projekt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SQL_Testzestaw_ma_projekt">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="JPP_DE.dbo.Zestawy_godzin" DbObjectType="Table" GenerateShortCommands="true" GeneratorSourceName="SQL_Testzestaw_ma_projekt" MethodsParameterType="CLR" Modifier="Public" Name="SQL_Testzestaw_ma_projekt" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy4" UserSourceName="SQL_Testzestaw_ma_projekt">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT        Projekt_ID
@@ -996,7 +1035,7 @@ WHERE        (Projekt_ID = @ID_projekt) AND (Czynnosc = @czynnosc) AND (Osoba = 
               </DbCommand>
             </SelectCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteSQL_ProjektzListyZadan_po_ID" MethodsParameterType="CLR" Modifier="Public" Name="DeleteSQL_ProjektzListyZadan_po_ID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="DeleteSQL_ProjektzListyZadan_po_ID">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteSQL_ProjektzListyZadan_po_ID" MethodsParameterType="CLR" Modifier="Public" Name="DeleteSQL_ProjektzListyZadan_po_ID" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy5" UserSourceName="DeleteSQL_ProjektzListyZadan_po_ID">
             <DeleteCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>DELETE FROM Zestawy_godzin
@@ -1007,7 +1046,7 @@ WHERE        (ID_Zestawy_godz = @ID_proj)</CommandText>
               </DbCommand>
             </DeleteCommand>
           </DbSource>
-          <DbSource ConnectionRef="serwer2019\sqlexpress.JPP_DE.dbo" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SQL_CzyjestProjektNaLiscie_numer" MethodsParameterType="CLR" Modifier="Public" Name="SQL_CzyjestProjektNaLiscie_numer" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SQL_CzyjestProjektNaLiscie_numer">
+          <DbSource ConnectionRef="JPP_DEConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="SQL_CzyjestProjektNaLiscie_numer" MethodsParameterType="CLR" Modifier="Public" Name="SQL_CzyjestProjektNaLiscie_numer" QueryType="Scalar" ScalarCallRetval="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy6" UserSourceName="SQL_CzyjestProjektNaLiscie_numer">
             <SelectCommand>
               <DbCommand CommandType="Text" ModifiedByUser="true">
                 <CommandText>SELECT        COUNT(numer) AS ile
@@ -1499,6 +1538,51 @@ HAVING        (numer = @_numer)</CommandText>
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Zest3_sumagodzin_Osoba_proj" msprop:Generator_TableClassName="View_Zest3_sumagodzin_Osoba_projDataTable" msprop:Generator_TableVarName="tableView_Zest3_sumagodzin_Osoba_proj" msprop:Generator_TablePropName="View_Zest3_sumagodzin_Osoba_proj" msprop:Generator_RowDeletingName="View_Zest3_sumagodzin_Osoba_projRowDeleting" msprop:Generator_RowChangingName="View_Zest3_sumagodzin_Osoba_projRowChanging" msprop:Generator_RowEvHandlerName="View_Zest3_sumagodzin_Osoba_projRowChangeEventHandler" msprop:Generator_RowDeletedName="View_Zest3_sumagodzin_Osoba_projRowDeleted" msprop:Generator_UserTableName="View_Zest3_sumagodzin_Osoba_proj" msprop:Generator_RowChangedName="View_Zest3_sumagodzin_Osoba_projRowChanged" msprop:Generator_RowEvArgName="View_Zest3_sumagodzin_Osoba_projRowChangeEvent" msprop:Generator_RowClassName="View_Zest3_sumagodzin_Osoba_projRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="suma_godzin" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsuma_godzin" msprop:Generator_ColumnPropNameInRow="suma_godzin" msprop:Generator_ColumnPropNameInTable="suma_godzinColumn" msprop:Generator_UserColumnName="suma_godzin" type="xs:int" minOccurs="0" />
+              <xs:element name="wynik2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnwynik2" msprop:Generator_ColumnPropNameInRow="wynik2" msprop:Generator_ColumnPropNameInTable="wynik2Column" msprop:Generator_UserColumnName="wynik2" type="xs:int" minOccurs="0" />
+              <xs:element name="Osoba" msprop:Generator_ColumnVarNameInTable="columnOsoba" msprop:Generator_ColumnPropNameInRow="Osoba" msprop:Generator_ColumnPropNameInTable="OsobaColumn" msprop:Generator_UserColumnName="Osoba" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Numer" msprop:Generator_ColumnVarNameInTable="columnNumer" msprop:Generator_ColumnPropNameInRow="Numer" msprop:Generator_ColumnPropNameInTable="NumerColumn" msprop:Generator_UserColumnName="Numer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Rezerwa2" msprop:Generator_ColumnVarNameInTable="columnRezerwa2" msprop:Generator_ColumnPropNameInRow="Rezerwa2" msprop:Generator_ColumnPropNameInTable="Rezerwa2Column" msprop:Generator_UserColumnName="Rezerwa2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Czynnosc" msprop:Generator_ColumnVarNameInTable="columnCzynnosc" msprop:Generator_ColumnPropNameInRow="Czynnosc" msprop:Generator_ColumnPropNameInTable="CzynnoscColumn" msprop:Generator_UserColumnName="Czynnosc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Klient" msprop:Generator_ColumnVarNameInTable="columnKlient" msprop:Generator_ColumnPropNameInRow="Klient" msprop:Generator_ColumnPropNameInTable="KlientColumn" msprop:Generator_UserColumnName="Klient" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="WEEK" msprop:Generator_ColumnVarNameInTable="columnWEEK" msprop:Generator_ColumnPropNameInRow="WEEK" msprop:Generator_ColumnPropNameInTable="WEEKColumn" msprop:Generator_UserColumnName="WEEK" type="xs:int" minOccurs="0" />
+              <xs:element name="ROK" msprop:Generator_ColumnVarNameInTable="columnROK" msprop:Generator_ColumnPropNameInRow="ROK" msprop:Generator_ColumnPropNameInTable="ROKColumn" msprop:Generator_UserColumnName="ROK" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

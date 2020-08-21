@@ -35,6 +35,7 @@ namespace Raportowanie_DE
         slowniki slowniki = new slowniki();
         Zestawienie1 zestawienie1 = new Zestawienie1();
         Raport1 raportgodzin1 = new Raport1();
+        Raport2 raportbyosoby = new Raport2();
         
         private string uprawnienie;
 
@@ -69,7 +70,7 @@ namespace Raportowanie_DE
                 button6.Visibility = Visibility.Visible;
             }
 
-            if (uprawnienie == "kierownik")
+            if ((uprawnienie == "kierownik") || (uprawnienie == "admin"))
             {
                 button2.IsEnabled = true;
                 button2.Visibility = Visibility.Visible;
@@ -81,6 +82,10 @@ namespace Raportowanie_DE
                 button5.Visibility = Visibility.Visible;
                 button6.IsEnabled = true;
                 button6.Visibility = Visibility.Visible;
+                button7.IsEnabled = true;
+                button7.Visibility = Visibility.Visible;
+                buttonAdmin1.IsEnabled = true;
+                buttonAdmin1.Visibility = Visibility.Visible;
             }
 
         }
@@ -129,6 +134,18 @@ namespace Raportowanie_DE
         {
             ContentControl_JPP.Content = raportgodzin1;
             labelglowny.Content = "Raport 2. Zestawienie godzin";
+        }
+
+        private void Polecenie7_Click(object sender, RoutedEventArgs e)
+        {
+            ContentControl_JPP.Content = raportbyosoby;
+            labelglowny.Content = "Raport 3. Zestawienie godzin na osoby";
+
+        }
+
+        private void PolecenieAdmin1_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
