@@ -13,6 +13,7 @@
     </UserControl.Resources>
     <Grid>
         <Button x:Name="button" Content="Zapisz" Width="150" Height="25" Click="button_Click" Margin="397,33,453,742"/>
+        <Label Content="edycja pojednynczego zadania po jego wybraniu "/>
 
         <StackPanel DataContext="{StaticResource zestawy_godzinViewSource}">
             <DataGrid x:Name="zestawy_godzinDataGrid"   AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="20,80,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalScrollBarVisibility="Visible" CanUserAddRows="False" CanUserResizeRows="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="948" Height="687">

@@ -83,6 +83,9 @@
     <Compile Include="Strony\Raport1.xaml.cs">
       <DependentUpon>Raport1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Strony\Raport3.xaml.cs">
+      <DependentUpon>Raport3.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Strony\Raportowanie.xaml.cs">
       <DependentUpon>Raportowanie.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Strony\Raport1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Strony\Raport3.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
