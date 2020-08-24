@@ -29,83 +29,62 @@ namespace Raportowanie_DE.Strony
         private JPP_DEDataSetTableAdapters.LoginTableAdapter loginTableAdapter = new JPP_DEDataSetTableAdapters.LoginTableAdapter();
         private List<string> listaosob = new List<string>();
         private List<JPP_DEDataSet.Zestawy_godzinRow> lista_zestawygodzRow = new List<JPP_DEDataSet.Zestawy_godzinRow>();
-        private ExcelAll excelAll = new ExcelAll(); 
-
+        private List<JPP_DEDataSet.Zestawy_godzinRow> lista_zestawygodzRowview = new List<JPP_DEDataSet.Zestawy_godzinRow>();
+        private ExcelAll excelAll = new ExcelAll();
+        
 
         public Raport3()
         {
             InitializeComponent();
-            
+            string zespol = "DE11%";
+            loginTableAdapter.FillBy_Typ_Stat_zespol(jPP_DEDataSet.Login, "Aktywny", zespol, "DE");
+            loginComboBox.ItemsSource = jPP_DEDataSet.Login;
+
         }
 
-        private void przygotuj()
+        private void loginComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //zestawy_GodzinTableAdapter.Fill(jPP_DEDataSet.Zestawy_godzin);
+            
+            ComboBox box = sender as ComboBox;
 
+             if (box.SelectedIndex <0 ) return;
 
-            string projekt;
-            string login;
-            int week;
-            int rok;
+            DataRowView dataRow = box.SelectedItem as DataRowView;   
+    
+            JPP_DEDataSet.LoginRow row = dataRow.Row as JPP_DEDataSet.LoginRow;
+           
 
+            przygotuj_zestaw(row.Login);
 
+            view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.DataContext = lista_zestawygodzRowview;
 
+        }
 
-            string zespol = "DE111";
-            //if (wybor == 1) zespol = "DE112";
-            //if (wybor == 2) zespol = "DE11%";
-            //if (wybor == 3) zespol = "DE2%";
-            //if (wybor == 4) zespol = "DE10%";
-            //if (wybor == 5) zespol = "DE%";
-
-            loginTableAdapter.FillBy_Typ_Stat_zespol(jPP_DEDataSet.Login, "Aktywny", zespol, "DE");
-
-
-            DataRowCollection dataRows = jPP_DEDataSet.Login.Rows;
-
-            //            foreach (JPP_DEDataSet.LoginRow wiersz in dataRows)
-            //          {
-            JPP_DEDataSet.LoginRow wiersz = dataRows[0] as JPP_DEDataSet.LoginRow;
-
-
-                // List<object> listawiersza = wiersz.ItemArray.ToList();
-               string imie1 = wiersz.Imie;
-                string nazwisko1 = wiersz.Nazwisko;
-                string login1 = wiersz.Login;
-                int nr_prac = wiersz.Nr_Pracownika;
-
-                
-
+        private void przygotuj_zestaw(string login1)
+        {
+           
                 lista_zestawygodzRow.Clear();
                 zestawy_GodzinTableAdapter.FillBy_login(jPP_DEDataSet.Zestawy_godzin, login1);
-                //wypełnik liste 
+                //wypełnij liste 
                 foreach (JPP_DEDataSet.Zestawy_godzinRow row in jPP_DEDataSet.Zestawy_godzin)
                 {
                     lista_zestawygodzRow.Add(row);  
                 }
+                //wykonaj obliczenia na lioscie i usun powielające
+                oblicz(lista_zestawygodzRow);
 
-            view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.ItemsSource = jPP_DEDataSet.Zestawy_godzin;
-
-            //  <>(week); 
-           
-
-
-  //        }
+                         
         }
 
         private void uruchom()
         {
-         oblicz(lista_zestawygodzRow);
+         
 
 
         }
 
 
 
-        private void zestawienie()
-        {
-
-        }
         private void oblicz(List<JPP_DEDataSet.Zestawy_godzinRow> rows)
         {
             JPP_DEDataSet.Zestawy_godzinRow row;
@@ -146,14 +125,12 @@ namespace Raportowanie_DE.Strony
                     }
 
             }
-
-                // row1 = rows.FindLast(x => x.Projekt.Equals(nr_proj));
-
-               
-
+                    
             }
-
-            view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.ItemsSource = rows;
+            lista_zestawygodzRowview = rows;
+            view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.DataContext = null;
+            view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.DataContext = lista_zestawygodzRowview;
+            
 
         }
         private int obliczsumeweek(JPP_DEDataSet.Zestawy_godzinRow row)
@@ -180,6 +157,13 @@ namespace Raportowanie_DE.Strony
             // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
             // 	myCollectionViewSource.Source = your data
             // }
+            // Nie ładuj danych w czasie projektowania.
+            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
+            // {
+            // 	//Tu załaduj swoje dane i przypisz wynik do CollectionViewSource.
+            // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
+            // 	myCollectionViewSource.Source = your data
+            // }
         }
 
         private void butprzygraport_Click(object sender, RoutedEventArgs e)
@@ -189,19 +173,31 @@ namespace Raportowanie_DE.Strony
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            przygotuj();
+            
         }
 
         private void do_excel_Click(object sender, RoutedEventArgs e)
         {
-            var aaaa = view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid.ItemsSource;
-           // DataTable dataTable = (view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid);
 
 
-           // excelAll.tabelatoexcel(dataTable);
+            DataGrid aaaa = view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid as DataGrid;
+
+            Clipboard.Clear();
+            DataObject data = new DataObject();
+            data.SetData(DataFormats.Text, "My Stuff with headers");
+            Clipboard.SetDataObject(data);
+
+        
         }
 
+        private void view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid_CopyingRowClipboardContent(object sender, DataGridRowClipboardEventArgs e)
+        {
+            //Clipboard.Clear();
+            //DataObject data = new DataObject();
+            //data.SetData(DataFormats.Text, "My Stuff with headers");
+            //Clipboard.SetDataObject(data);
+        }
 
-
+       
     }
 }
