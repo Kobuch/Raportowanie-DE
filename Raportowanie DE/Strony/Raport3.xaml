@@ -10,8 +10,13 @@
    
 
     <Grid >
-        <Button x:Name="butprzygraport" Content="Przygotuj raport" HorizontalAlignment="Left" Margin="221,21,0,0" VerticalAlignment="Top" Width="75" Click="butprzygraport_Click"/>
-        <DataGrid x:Name="view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="10,59,0,213" RowDetailsVisibilityMode="VisibleWhenSelected"  ClipboardCopyMode="IncludeHeader" RowHeaderWidth="20" HorizontalAlignment="Left" >
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="White" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <DataGrid x:Name="view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="58,50,0,222" RowDetailsVisibilityMode="VisibleWhenSelected"  ClipboardCopyMode="IncludeHeader" RowHeaderWidth="20" HorizontalAlignment="Left" VerticalScrollBarVisibility="Visible" VerticalAlignment="Top">
             <DataGrid.Columns>
                 <DataGridTextColumn x:Name="suma_godzinColumn" Binding="{Binding suma_godzin}" Header="suma godzin" IsReadOnly="True" />
                 <DataGridTextColumn x:Name="klientColumn" Binding="{Binding Klient}" Header="Klient" />
@@ -35,8 +40,7 @@
 
 
         </DataGrid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="94,21,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <Grid x:Name="grid1" DataContext="{Binding}" HorizontalAlignment="Left" Margin="361,13,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid1" DataContext="{Binding}" HorizontalAlignment="Left" Margin="58,13,0,0" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -44,7 +48,7 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Login:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <Label Content="Wybierz osobe :" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Foreground="White"/>
             <ComboBox x:Name="loginComboBox" Grid.Column="1" DisplayMemberPath="Login" HorizontalAlignment="Left" Height="Auto" ItemsSource="{Binding}" Margin="3" Grid.Row="0" VerticalAlignment="Center" Width="120" SelectionChanged="loginComboBox_SelectionChanged">
                 <ComboBox.ItemsPanel>
                     <ItemsPanelTemplate>

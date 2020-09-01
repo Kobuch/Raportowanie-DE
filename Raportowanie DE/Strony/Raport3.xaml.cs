@@ -76,12 +76,7 @@ namespace Raportowanie_DE.Strony
                          
         }
 
-        private void uruchom()
-        {
-         
-
-
-        }
+       
 
 
 
@@ -150,45 +145,11 @@ namespace Raportowanie_DE.Strony
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
 
-            // Nie ładuj danych w czasie projektowania.
-            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            // {
-            // 	//Tu załaduj swoje dane i przypisz wynik do CollectionViewSource.
-            // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
-            // 	myCollectionViewSource.Source = your data
-            // }
-            // Nie ładuj danych w czasie projektowania.
-            // if (!System.ComponentModel.DesignerProperties.GetIsInDesignMode(this))
-            // {
-            // 	//Tu załaduj swoje dane i przypisz wynik do CollectionViewSource.
-            // 	System.Windows.Data.CollectionViewSource myCollectionViewSource = (System.Windows.Data.CollectionViewSource)this.Resources["Resource Key for CollectionViewSource"];
-            // 	myCollectionViewSource.Source = your data
-            // }
+          
         }
 
-        private void butprzygraport_Click(object sender, RoutedEventArgs e)
-        {
-            uruchom();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void do_excel_Click(object sender, RoutedEventArgs e)
-        {
-
-
-            DataGrid aaaa = view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid as DataGrid;
-
-            Clipboard.Clear();
-            DataObject data = new DataObject();
-            data.SetData(DataFormats.Text, "My Stuff with headers");
-            Clipboard.SetDataObject(data);
-
-        
-        }
+      
+       
 
         private void view_Zest2_sumagodzin_K_O_W_R_P_CDataGrid_CopyingRowClipboardContent(object sender, DataGridRowClipboardEventArgs e)
         {

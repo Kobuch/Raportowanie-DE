@@ -42,7 +42,7 @@
                     </Button>
 
                 </StackPanel>
-                <DataGrid x:Name="view_Zest3_sumagodzin_Osoba_projDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="30,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False">
+                <DataGrid x:Name="view_Zest3_sumagodzin_Osoba_projDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="30,30,0,30" RowDetailsVisibilityMode="VisibleWhenSelected" HorizontalAlignment="Left" VerticalAlignment="Top" CanUserAddRows="False" CanUserDeleteRows="False" VerticalScrollBarVisibility="Visible" MaxHeight="400">
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="suma_godzinColumn" Binding="{Binding suma_godzin}" Header="suma godzin" IsReadOnly="True" />
 

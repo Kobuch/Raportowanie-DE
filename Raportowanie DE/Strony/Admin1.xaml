@@ -16,7 +16,7 @@
         <Label Content="edycja pojednynczego zadania po jego wybraniu "/>
 
         <StackPanel DataContext="{StaticResource zestawy_godzinViewSource}">
-            <DataGrid x:Name="zestawy_godzinDataGrid"   AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="20,80,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalScrollBarVisibility="Visible" CanUserAddRows="False" CanUserResizeRows="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="948" Height="687">
+            <DataGrid x:Name="zestawy_godzinDataGrid"   AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="20,80,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" VerticalScrollBarVisibility="Visible" CanUserAddRows="False" CanUserResizeRows="False" HorizontalAlignment="Left" VerticalAlignment="Top" Width="948" Height="687" ClipboardCopyMode="IncludeHeader">
                 <DataGrid.Columns>
                     <DataGridTemplateColumn Header="Edycja">
                         <DataGridTemplateColumn.CellTemplate>
@@ -43,13 +43,14 @@
                     <DataGridTextColumn x:Name="wTOColumn" Binding="{Binding WTO}" Header="WTO" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="sROColumn" Binding="{Binding SRO}" Header="SRO" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="cZWColumn" Binding="{Binding CZW}" Header="CZW" Width="SizeToHeader"/>
+                     <DataGridTextColumn x:Name="pIAColumn" Binding="{Binding PIA}" Header="PIA" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="sOBColumn" Binding="{Binding SOB}" Header="SOB" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="nIEDColumn" Binding="{Binding NIED}" Header="NIED" Width="SizeToHeader"/>
                     <DataGridCheckBoxColumn x:Name="mozna_usuwacColumn" Binding="{Binding Mozna_usuwac}" Header="Mozna usuwac" Width="SizeToHeader"/>
                     <DataGridCheckBoxColumn x:Name="mozna_edytowacColumn" Binding="{Binding Mozna_edytowac}" Header="Mozna edytowac" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="numerColumn" Binding="{Binding Numer}" Header="Numer" Width="SizeToHeader"/>
                     <DataGridTextColumn x:Name="rezerwa2Column" Binding="{Binding Rezerwa2}" Header="Rezerwa 2" Width="SizeToHeader"/>
-                    <DataGridTextColumn x:Name="pIAColumn" Binding="{Binding PIA}" Header="PIA" Width="SizeToHeader"/>
+                   
                     <DataGridTextColumn x:Name="iD_Zestawy_godzColumn" Binding="{Binding ID_Zestawy_godz}" Header="ID Zestawy godz" IsReadOnly="True" Width="SizeToHeader"/>
                 </DataGrid.Columns>
             </DataGrid>
